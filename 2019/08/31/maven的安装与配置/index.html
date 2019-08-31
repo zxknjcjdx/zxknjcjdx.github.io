@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | blog">
+  <title>maven的安装与配置 | blog</title>
+  <meta name="keywords" content=" 编程 , maven ">
+  <meta name="description" content="maven的安装与配置 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -340,19 +340,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-maven的安装与配置" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">maven的安装与配置</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="maven">maven</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color1">maven</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 14:21:52'>2019-08-31 14:21</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-31 18:28:04'>2019-08-31 18:11</time>
         
     </div>
     <div class="article-meta">
@@ -374,7 +388,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven"><span class="toc-text">对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、maven的介绍"><span class="toc-text">一、maven的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装maven"><span class="toc-text">二、安装maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、使用maven"><span class="toc-text">三、使用maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以上就是maven的全部介绍，希望对大家有帮助"><span class="toc-text">以上就是maven的全部介绍，希望对大家有帮助</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -389,7 +403,15 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven"><a href="#对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven" class="headerlink" title="对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven"></a>对于java编程来说，导包的过程无疑是最浪费时间的，今天小小怪就给大家介绍一下神奇的导包工具maven</h2><h2 id="一、maven的介绍"><a href="#一、maven的介绍" class="headerlink" title="一、maven的介绍"></a>一、maven的介绍</h2><p>首先解释一下什么是maven，maven的核心功能是合理叙述项目间的依赖关系，这样解释也许没学过java的人来说还是听不懂。下面我就通俗的来说一下什么是maven，对于编写程序，我们不可避免的会需要用到别人封装好的函数，那么这些函数都是被大能们写在包里面的，那么我们就需要导入这个包，才可以引用这个方法，而导包的过程，往往都是手动的，有时候开发软件是自带一些常用的包，但是对于开发软件没有自带的包，我们就需要从网上去下载，下载的过程浪费时间，而且在csdn下载，很多时候都是需要积分的。但是使用maven就不存在这样的问题，maven自带repository包，这个包下面有很多我们需要的jar包文件，而在maven里面会有这样的一个配置文件,pom.xml，当我们看到项目里面有这么一个xml文件的时候，我们就可以知道这个是基于maven的项目，说是maven项目，但其实java项目就是java项目，js就是js，很多人以为基于quicjstart建立的项目就是一个实实在在的maven项目，其实并不是，只是在项目上加了一层maven而已。说了这么多，下面我们开始maven的安装和配置，以及建立maven项目。</p>
+<h2 id="二、安装maven"><a href="#二、安装maven" class="headerlink" title="二、安装maven"></a>二、安装maven</h2><p>首先我们需要检查自己的电脑上是否安装了jdk，win+r打开命令提示符，输入cmd，在里面输入<code>java  -version</code>如果显示版本信息，就说明安装成功，接下来我们需要下载maven的安装包，<a href="http://maven.apache.org/download.cgi" title="maven" target="_blank" rel="noopener">maven安装包</a>  ，大家记好了，下载这种类型的包：apache-maven-版本号-bin.zip，下载好了，之后我们自己随便放在想放到位置，解压好。下面我们还需要配置maven的环境变量，我们打开电脑属性，高级属性，环境变量配置：新建M2_HOME环境变量，变量值为你的maven包的路径。另外还需要在path变量里面添加一行：%M2_HOME%bin;这个是为了不管在什么情况下，我系统都能找到maven的包。当这些全部都设置来了之后，win+R打开命令提示符，输入cmd，打开之后再里面输入<code>mvn -v</code>，注意之间有个空格，如果出现版本号就说明安装成功了。由于本人电脑安装的java编程软件是idea，所以我就针对idea进行操作了,<br>首先：我们点击file—&gt;settings—&gt;Build,Execution,Deployment—&gt;maven，我们只需要修改maven home diectory这个就可以，点击右边的打开包，找到我们的maven包的位置，另外Override需要打勾，不然很麻烦。下面我们就可以开始创建maven项目了，点击file—&gt;new project，在右边找到maven，把create from archetype打勾，然后从下面的包中找到quickstart，这样我们就创建了一个maven[java]的项目，选中，一直下一步，这其中没有什么需要说明的地方了，之后会有groupId和dartifacId，名字随便取就好。</p>
+<h2 id="三、使用maven"><a href="#三、使用maven" class="headerlink" title="三、使用maven"></a>三、使用maven</h2><p>说了那么多，当然是为了使用maven带给我们的好处了，比如说我需要导入mahout的包，那么我只需要在pom.xml文件里面加入如下代码就可以了：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.mahout&lt;/groupId&gt;
+    &lt;artifactId&gt;mahout-core&lt;/artifactId&gt;
+    &lt;version&gt;0.9&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>其实这个代码大家都不用自己去写，给大家提供一个maven的中央仓库，<a href="https://mvnrepository.com" title="maven中央仓库" target="_blank" rel="noopener">maven中央仓库</a>，点击进去之后，在搜素框输入mahout，然后点击引用最多的那个，然后出现很多版本，我们选择最新的版本就可以了，之后会出现这段代码，将代码全部复制到pom.xml里面去就可以了。放进去之后，我们会发现IDE会自动帮我们下载我们需要用到的包，这个时候只需要等待就可以了。</p>
+<h2 id="以上就是maven的全部介绍，希望对大家有帮助"><a href="#以上就是maven的全部介绍，希望对大家有帮助" class="headerlink" title="以上就是maven的全部介绍，希望对大家有帮助"></a>以上就是maven的全部介绍，希望对大家有帮助</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -400,6 +422,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>maven的安装与配置</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-31, 18:11:58</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-31, 18:28:04</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/maven的安装与配置/" title="maven的安装与配置">http://yoursite.com/2019/08/31/maven的安装与配置/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

@@ -159,7 +159,7 @@
         
     
         
-        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+        <a title="email" href="mailto:1990858822@qq.com" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-email"></use>
@@ -169,7 +169,7 @@
         
     
         
-        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1990858822&site=qq&menu=yes" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-qq"></use>
@@ -204,11 +204,27 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    
+        
+            
+            <li><div data-rel="maven">maven<small>(1)</small></div>
+                
+            </li>
+            
+        
     
         
             
             <li><div data-rel="python">python<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(1)</small></div>
                 
             </li>
             
@@ -224,7 +240,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="4">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -263,7 +279,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
     </li>
     
     <div class="clearfix"></div>
@@ -271,6 +295,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="maven "
+           href="/2019/08/31/maven的安装与配置/"
+           data-tag="编程,maven"
+           data-author="" >
+            <span class="post-title" title="maven的安装与配置">maven的安装与配置</span>
+            <span class="post-date" title="2019-08-31 18:11:58">2019/08/31</span>
+        </a>
         
         <a  class="python "
            href="/2019/08/31/python学习之路/"
@@ -286,6 +318,14 @@
            data-author="" >
             <span class="post-title" title="python库matlabplot绘图详解">python库matlabplot绘图详解</span>
             <span class="post-date" title="2019-08-31 14:31:27">2019/08/31</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/08/31/前端html学习方法/"
+           data-tag="编程,html"
+           data-author="" >
+            <span class="post-title" title="前端html学习方法">前端html学习方法</span>
+            <span class="post-date" title="2019-08-31 17:37:00">2019/08/31</span>
         </a>
         
     </nav>
@@ -379,7 +419,7 @@ import os</code></pre><p>正常情况下，我其实还会导入os模块，这�
 <h2 id="循环作图，图像不重叠问题"><a href="#循环作图，图像不重叠问题" class="headerlink" title="循环作图，图像不重叠问题"></a>循环作图，图像不重叠问题</h2><p>这个也是重点，可以说，百度是没有的，这是小小怪自己试出来的，虽然很简单，首先引出问题：当我们使用大数据需要作很多的图的时候，我们理想当然的去选取用循环去生成图像并且保存，可是我们发现一个非常严重的问题，当我们用封装好的函数去做循环时，生成的图像全部重叠在了一起，比如第二图应该只有第二张图的图像，可是第二张图不但有第二张图，还包含了第一张图的图像，后面生成的图像都是这种情况，这个时候，我们只需要在我们封装的函数最后加上一段代码<code>plt.close()</code>就可以完美的解决循环作图问题</p>
 <h1 id="最后祝大家在学习python的路上披荆斩棘"><a href="#最后祝大家在学习python的路上披荆斩棘" class="headerlink" title="最后祝大家在学习python的路上披荆斩棘"></a><font color="gray" size="5">最后祝大家在学习python的路上披荆斩棘</font></h1>
       
-       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
 </article>
 
@@ -456,7 +496,7 @@ import os</code></pre><p>正常情况下，我其实还会导入os模块，这�
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#编程','#python',],
+            'data': ['#编程','#maven','#python','#html',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

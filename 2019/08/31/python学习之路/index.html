@@ -159,7 +159,7 @@
         
     
         
-        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+        <a title="email" href="mailto:1990858822@qq.com" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-email"></use>
@@ -169,7 +169,7 @@
         
     
         
-        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1990858822&site=qq&menu=yes" target="_blank">
             
                 <svg class="iconfont-svg" aria-hidden="true">
                     <use xlink:href="#icon-qq"></use>
@@ -204,11 +204,27 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    
+        
+            
+            <li><div data-rel="maven">maven<small>(1)</small></div>
+                
+            </li>
+            
+        
     
         
             
             <li><div data-rel="python">python<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(1)</small></div>
                 
             </li>
             
@@ -224,7 +240,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="4">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -263,7 +279,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
     </li>
     
     <div class="clearfix"></div>
@@ -271,6 +295,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="maven "
+           href="/2019/08/31/maven的安装与配置/"
+           data-tag="编程,maven"
+           data-author="" >
+            <span class="post-title" title="maven的安装与配置">maven的安装与配置</span>
+            <span class="post-date" title="2019-08-31 18:11:58">2019/08/31</span>
+        </a>
         
         <a  class="python "
            href="/2019/08/31/python学习之路/"
@@ -286,6 +318,14 @@
            data-author="" >
             <span class="post-title" title="python库matlabplot绘图详解">python库matlabplot绘图详解</span>
             <span class="post-date" title="2019-08-31 14:31:27">2019/08/31</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/08/31/前端html学习方法/"
+           data-tag="编程,html"
+           data-author="" >
+            <span class="post-title" title="前端html学习方法">前端html学习方法</span>
+            <span class="post-date" title="2019-08-31 17:37:00">2019/08/31</span>
         </a>
         
     </nav>
@@ -369,7 +409,7 @@
 <h2 id="四、多看大公司的开源代码"><a href="#四、多看大公司的开源代码" class="headerlink" title="四、多看大公司的开源代码"></a>四、多看大公司的开源代码</h2><p>当我们觉得自己的代码能力已经能看懂代码的时候，我们就可以去学习一下大公司写代码的思想，比如我想传入一个值<code>run(a)</code>这个a的值可以根据自己认为设定，但是a的值又依赖于数据集里面的个数，那么大公司的源码会这样处理，首先获取到这个数据集里面的个数，如<code>b=movelens.counts()</code>然后选取最优的<code>best=a&lt;b?a:b</code>这段代码的意思就是：如果输入的值比数据集里面的小，那么就可以取，但是如果超出了数据集里面的范围，那么就选取数据的值，非常的简练，但是却实现了传入数据不可能报错的可能，也给使用者带来了方便，不然，使用者还需要自己捕获异常。</p>
 <h1 id="最后祝大家在学习python的路上披荆斩棘"><a href="#最后祝大家在学习python的路上披荆斩棘" class="headerlink" title="最后祝大家在学习python的路上披荆斩棘"></a><font color="gray" size="5">最后祝大家在学习python的路上披荆斩棘</font></h1>
       
-       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
 </article>
 
@@ -446,7 +486,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#编程','#python',],
+            'data': ['#编程','#maven','#python','#html',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
