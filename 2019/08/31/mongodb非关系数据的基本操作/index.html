@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>前端html学习方法 | blog</title>
-  <meta name="keywords" content=" 编程 , html ">
-  <meta name="description" content="前端html学习方法 | blog">
+  <title>mongodb非关系数据的基本操作 | blog</title>
+  <meta name="keywords" content=" mongodb ">
+  <meta name="description" content="mongodb非关系数据的基本操作 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -380,9 +380,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-前端html学习方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mongodb非关系数据的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">前端html学习方法</h1>
+        <h1 class="article-title">mongodb非关系数据的基本操作</h1>
     
     <div class="article-meta">
         
@@ -390,23 +390,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="前端">前端</a>
+                <a href="javascript:" data-rel="数据库">数据库</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">编程</a>
-            
-            <a href="javascript:" class="color5">html</a>
+            <a href="javascript:" class="color3">mongodb</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 18:02:40'>2019-08-31 17:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-31 21:58:47'>2019-08-31 21:36</time>
         
     </div>
     <div class="article-meta">
@@ -428,7 +426,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"><span class="toc-text">今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、了解标签元素"><span class="toc-text">一、了解标签元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、能够定位元素到任意位置"><span class="toc-text">二、能够定位元素到任意位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、CSS样式的编写"><span class="toc-text">三、CSS样式的编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、多观察，多积累"><span class="toc-text">四、多观察，多积累</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><span class="toc-text">非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mongodb的安装"><span class="toc-text">一、mongodb的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mongo的简单命令操作"><span class="toc-text">二、mongo的简单命令操作</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -443,12 +441,8 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"><a href="#今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写" class="headerlink" title="今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"></a>今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写</h2><h2 id="一、了解标签元素"><a href="#一、了解标签元素" class="headerlink" title="一、了解标签元素"></a>一、了解标签元素</h2><p>首先我们需要大部分的标签元素，如果说让你一下子了解所有的标签元素，想来也是不切合实际的，因此我们需要了解网站里面最基本的标签元素，比如a,div,p,ul,h1,h2,h3,h4,dd,dt等等其他经常用到的标签。</p>
-<h2 id="二、能够定位元素到任意位置"><a href="#二、能够定位元素到任意位置" class="headerlink" title="二、能够定位元素到任意位置"></a>二、能够定位元素到任意位置</h2><p>当我们打开淘宝的时候，你有没有想过一个问题，为什么淘宝的标签放的那么好看，有的同学会觉得，那肯定是个非常牛*的人写的，那我告诉你，给我两天的时间，我能写一个一模一样的，其实只要你知道如果将元素定位是非常重要的，比如div标签的大小，如果放置div标签到自己想要放置的位置，如果使用ul标签，为什么要设置浮动，等等，也就是不管怎么样，我们要知道如何放置元素的位置。</p>
-<h2 id="三、CSS样式的编写"><a href="#三、CSS样式的编写" class="headerlink" title="三、CSS样式的编写"></a>三、CSS样式的编写</h2><p>当我们看到淘宝的时候，那些花里胡哨的图片，字体，当然不是简简单单的用P标签就能实现的了，我们需要给p标签，或者其他的标签添加样式，怎么样才会好看一点呢，这里就需要你自己按照自己的想法去实现了。比如，我使用</p>
-<pre><code>&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;2&lt;/li&gt;</code></pre><p>生成的列表其实是竖着的，但是我想让他横着，那么我们就需要给他添加样式,比如<code>float:left</code>，等等，根据自己的需要去网上寻找答案，就能够学好css样式。</p>
-<h2 id="四、多观察，多积累"><a href="#四、多观察，多积累" class="headerlink" title="四、多观察，多积累"></a>四、多观察，多积累</h2><p>比如说，有的同学就喜欢看各种网页，比如<code>www.xxxx.com</code>，不管是什么网页，你要想一下，如果是我，我会怎么写出这种网页了，如果觉得自己不会这个，那么就需要去网上查找，不要每次都去网上查找，要熟能生巧，当下次再看到的时候能不去网上查找也能写出来。</p>
+        <h2 id="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><a href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。" class="headerlink" title="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"></a>非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</h2><h2 id="一、mongodb的安装"><a href="#一、mongodb的安装" class="headerlink" title="一、mongodb的安装"></a>一、mongodb的安装</h2><p>这个还是需要大家自己去网上查找安装教程，安装配置完毕之后，win+r输入cmd进入控制台之后，输入mongo，当我们成功进入到mongo的控制台之后，说明安装和配置是没有问题的。</p>
+<h2 id="二、mongo的简单命令操作"><a href="#二、mongo的简单命令操作" class="headerlink" title="二、mongo的简单命令操作"></a>二、mongo的简单命令操作</h2><p>查看数据库命令，<code>show dbs</code>可以查看mongo的所有数据库，使用数据库命令和mysql是一样的，比如<code>use student</code>，这个时候我们会进入到student数据库下面，查看表命令，在mongo里面不是表，而是一种集合，因此命令为<code>show collections;</code>查看表中的所有数据的操作为<code>db.student.find()</code>,这个会显示出所有的数据，有的人觉得太多了，有没有像Mysql的where语句的过滤呢，当然是有的，不过在此之前，我们需要一个事情就是，在mongo中的所有数据都是以json的形式存在，也就是说键值对的形式存在的。因此查询语句需要这样写<code>db.student.find({number: {$all : [111,222]}})</code>这个语句的意思是查询number为111和222的所有记录。正常我们查询时，还会加上pretty(),这个是为了是展示出来的数据比较好看一点，如<code>db.student.find().pretty()</code>,这时展示出来的数据是json类型的，看起来比较舒服一点。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -462,12 +456,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>前端html学习方法</p>
+    <p><span class="copy-title">文章标题:</span>mongodb非关系数据的基本操作</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 17:37:00</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 18:02:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/前端html学习方法/" title="前端html学习方法">http://yoursite.com/2019/08/31/前端html学习方法/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:36:09</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:58:47</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mongodb非关系数据的基本操作/" title="mongodb非关系数据的基本操作">http://yoursite.com/2019/08/31/mongodb非关系数据的基本操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
