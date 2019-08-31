@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="blog">
+  <title>python库matlabplot绘图详解 | blog</title>
+  <meta name="keywords" content=" 编程 , python ">
+  <meta name="description" content="python库matlabplot绘图详解 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具一：matplotlib库文件安装acaconda安装方式安装了anaconda的小伙伴可以使用控制台直接安装，安装win+R调出控制台输入cmd，在控制台输入conda install matplotlib进行安装，当然了在pycharm下面有一个Terminal，点开它，在其中直接输">
 <meta name="keywords" content="编程,python">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/touxiang.JPG" />
@@ -294,12 +294,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-python库matlabplot绘图详解" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">python库matlabplot绘图详解</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color2">python</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-08-31 16:54:09'>2019-08-31 14:31</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具"><span class="toc-text">由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一：matplotlib库文件安装"><span class="toc-text">一：matplotlib库文件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#acaconda安装方式"><span class="toc-text">acaconda安装方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pip安装方式"><span class="toc-text">pip安装方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装库文件时，可能会遇到的问题"><span class="toc-text">安装库文件时，可能会遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：使用matplotlib画简单图形"><span class="toc-text">二：使用matplotlib画简单图形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤如下："><span class="toc-text">步骤如下：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步：导入库文件"><span class="toc-text">第一步：导入库文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步：导入数据"><span class="toc-text">第二步：导入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步：使用pyplot中的plot函数作图"><span class="toc-text">第三步：使用pyplot中的plot函数作图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四步：生成以及保存图像"><span class="toc-text">第四步：生成以及保存图像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单介绍一下os库"><span class="toc-text">简单介绍一下os库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图像的内容补充"><span class="toc-text">图像的内容补充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决中文乱码问题"><span class="toc-text">解决中文乱码问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环作图，图像不重叠问题"><span class="toc-text">循环作图，图像不重叠问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后祝大家在学习python的路上披荆斩棘"><span class="toc-text">最后祝大家在学习python的路上披荆斩棘</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -312,36 +357,55 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具"><a href="#由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具" class="headerlink" title="由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具"></a>由于“小小怪”是做推荐系统的，对于图像的处理这一块是必须要了解的，在这里跟大家分享一下python简单的绘图工具</h1><h1 id="一：matplotlib库文件安装"><a href="#一：matplotlib库文件安装" class="headerlink" title="一：matplotlib库文件安装"></a>一：matplotlib库文件安装</h1><h2 id="acaconda安装方式"><a href="#acaconda安装方式" class="headerlink" title="acaconda安装方式"></a>acaconda安装方式</h2><p>安装了anaconda的小伙伴可以使用控制台直接安装，安装win+R调出控制台输入cmd，在控制台输入<code>conda install matplotlib</code>进行安装，当然了在pycharm下面有一个Terminal，点开它，在其中直接输入<code>conda install matplotlib</code>也是可以的，正常情况下，第二种方式比较方便，因为我们编程总需要一个方便的IDE吧，这里方便的IDE我推荐使用pycharm。</p>
+<h2 id="pip安装方式"><a href="#pip安装方式" class="headerlink" title="pip安装方式"></a>pip安装方式</h2><p>安装了anaconda的小伙伴，也可以使用pip进行安装，命令当然也是很简单的，<code>pip install matplotlib</code>，没有使用anaconda的小伙伴，也不需要特意去下载anaconda，当我们进行IDE安装的时候，会默认帮我们安装上pip，以后我们可以只使用pip进行安装，但是小小怪还是建议大家，直接使用anaconda，因为如果小伙伴们在以后需要用到爬虫的相关库的时候，pip的安装方式会带来很多依赖不足的问题，需要我们自己手动去网上下载依赖的包，这样会浪费很多的时间。</p>
+<h2 id="安装库文件时，可能会遇到的问题"><a href="#安装库文件时，可能会遇到的问题" class="headerlink" title="安装库文件时，可能会遇到的问题"></a>安装库文件时，可能会遇到的问题</h2><p>比如虽然安装成功了，但是运行的时候会抛出这样的错误：<strong>import error : no module name tkinter</strong>，这是因为我们使用的matplotlib依赖其他的库，也不需要慌张，我们只需要使用上面的方式，将tkinter这个库也下载好就可以了。</p>
+<h2 id="二：使用matplotlib画简单图形"><a href="#二：使用matplotlib画简单图形" class="headerlink" title="二：使用matplotlib画简单图形"></a>二：使用matplotlib画简单图形</h2><p>比如现在我有两组数据，x = [1,2,3,4,5…],y = [0.1,0.2,0.3,…],加入x代表编号，而y代表对应于x的数据，现在我们想要绘制折线图来观察我们想看到的结果，当然了，不仅仅是折线图，使用matplotlib可以绘制所有excel绘制的图形。</p>
+<h2 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h2><h2 id="第一步：导入库文件"><a href="#第一步：导入库文件" class="headerlink" title="第一步：导入库文件"></a>第一步：导入库文件</h2><pre><code>import matplotlib
+import matplotlib.pyplot as plt
+import os</code></pre><p>正常情况下，我其实还会导入os模块，这个模块是系统自带的，os模块主要是用来做文件的相关操作，小伙伴们可以理解为，它可以改变，查找电脑里面任何一个文件的路径，这里使用os模块，当然是为了改变程序的路径，因为如果小伙伴们想将做出来的图形生成jpg或者png等文件的话，最好还是换个路径，不然生成的图像会默认保存在当前文件夹。</p>
+<h2 id="第二步：导入数据"><a href="#第二步：导入数据" class="headerlink" title="第二步：导入数据"></a>第二步：导入数据</h2><p>注意一点，matplotlib只支持列表形式的数据，比如我们传入的x,y它其实都是一个列表。</p>
+<h2 id="第三步：使用pyplot中的plot函数作图"><a href="#第三步：使用pyplot中的plot函数作图" class="headerlink" title="第三步：使用pyplot中的plot函数作图"></a>第三步：使用pyplot中的plot函数作图</h2><p>对于导包中的as可以理解为是整个库文件的缩写，也就是说我们后面用到的plt代表matplotlib.pyplot，因此小伙伴们在变量命名的时候千万不能出现plt这样的变量。以上面的x,y举例画折线图，当然了，如果想要画不同的图，只需要改变plt后面的函数名就可以了，<code>plt.plot(x, y, label=u&#39;图像描述&#39;, linewidth=3, color=&#39;r&#39;, marker=&#39;o&#39;, markerfacecolor=&#39;blue&#39;, markersize=6)</code>解释一下这里的参数,label是在生成的图像里面对生成该条图形的表述，注意不是整个图形，linewidth代表是折线的宽度,color代表的是折线的颜色,当然还有很多其他的颜色，小伙伴们可以自行上网查看，marker代表每个点的形状，当然也有很多种，小伙伴自行上网查看，markerfacecolor代表点的颜色，同上，markersize代表点的大小。到这里基本可以满足大家对作图的需求了，当我们想要在一张图里面继续画其他图线时，<code>plt.plot(x1, y1, label=u&#39;图像描述&#39;, linewidth=3, color=&#39;r&#39;, marker=&#39;o&#39;, markerfacecolor=&#39;blue&#39;, markersize=6)</code>即可，聪明的小伙伴可能已经看出来了，当我们处理大数据的时候，会涉及到很多有规律的数据，这个时候我们讲上面的代码封装之后，使用循环，那么得到的图像就不是简单的一个了。</p>
+<h2 id="第四步：生成以及保存图像"><a href="#第四步：生成以及保存图像" class="headerlink" title="第四步：生成以及保存图像"></a>第四步：生成以及保存图像</h2><p>生成图像的代码很简单<code>plt.show()</code>，保存图像的代码也很简单，<code>plt.savefig(&#39;文件名.jpg&#39;)</code></p>
+<h2 id="简单介绍一下os库"><a href="#简单介绍一下os库" class="headerlink" title="简单介绍一下os库"></a>简单介绍一下os库</h2><p>在作图这一块，os用不到太多的函数，因此这里只介绍我们需要用到的功能，改变当前文件路径，将我们生成的图像保存到我们需要保存的地方去，<code>os.chdir(&#39;这里填写保存文件的绝对路径&#39;)</code>,其他还有很多有趣的功能，希望大家自己去摸索吧，很多功能还是非常有趣的。</p>
+<h2 id="图像的内容补充"><a href="#图像的内容补充" class="headerlink" title="图像的内容补充"></a>图像的内容补充</h2><p>对于简简单单的作图，图像难免会显得内容太少，那么我们需要给图像增加点内容，比如x轴，y轴的坐标描述，以及整个图像的标题，对于x轴和y轴的坐标描述代码分别为:<code>plt.xlabel(u&#39;描述&#39;)</code>,<code>plt.ylabel(u&#39;描述&#39;)</code>,设置标题的代码为:<code>plt.title(u&#39;描述&#39;)</code>。</p>
+<h2 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h2><p>这个是非常关键的哦，即使百度你也找不到的，当然是小小怪自己摸索出来的，正常情况下，按照以上的步骤的话，做出来的图像中文是乱码的状态，那么怎么解决呢？首先我们需要加入这行代码，<code>chinfo = matplotlib.font_manager.FontProperties(fname=&#39;C:/Windows/Fonts/msyh.ttc&#39;)</code>，解释一下，这行代码表示我们调用电脑中自带的中文字体，小伙伴们可以到这个路径下面去查看一下，当然了，要设置文件夹格式显示隐藏文件。然后我们需要做的就是在有涉及到中文的地方加上如下代码，举个例子：<code>plt.xlabel(u&#39;描述&#39;, fontproperties=chinfo)</code>这时我们的x轴的中文描述就可以正常显示了，但是还要提醒一点，对于每一条图线的描述代码是不一样的，<code>plt.legend(loc=&#39;best&#39;, prop=chinfo)</code>，解释一下这行代码，我们在之前用plot作图的时候，里面的label描述，需要添加这行代码才能显示出来，其中<code>loc=&#39;best&#39;</code>这个代码在最恰当的位置给出描述，而<code>prop=chinfo</code>就是为了解决中文的乱码问题。</p>
+<h2 id="循环作图，图像不重叠问题"><a href="#循环作图，图像不重叠问题" class="headerlink" title="循环作图，图像不重叠问题"></a>循环作图，图像不重叠问题</h2><p>这个也是重点，可以说，百度是没有的，这是小小怪自己试出来的，虽然很简单，首先引出问题：当我们使用大数据需要作很多的图的时候，我们理想当然的去选取用循环去生成图像并且保存，可是我们发现一个非常严重的问题，当我们用封装好的函数去做循环时，生成的图像全部重叠在了一起，比如第二图应该只有第二张图的图像，可是第二张图不但有第二张图，还包含了第一张图的图像，后面生成的图像都是这种情况，这个时候，我们只需要在我们封装的函数最后加上一段代码<code>plt.close()</code>就可以完美的解决循环作图问题</p>
+<h1 id="最后祝大家在学习python的路上披荆斩棘"><a href="#最后祝大家在学习python的路上披荆斩棘" class="headerlink" title="最后祝大家在学习python的路上披荆斩棘"></a><font color="gray" size="5">最后祝大家在学习python的路上披荆斩棘</font></h1>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>python库matlabplot绘图详解</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-31, 14:31:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-31, 16:54:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/python库matlabplot绘图详解/" title="python库matlabplot绘图详解">http://yoursite.com/2019/08/31/python库matlabplot绘图详解/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">QQ1990858822 周小康</p>
