@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mysql视图的作用 | blog</title>
+  <title>mysql索引的作用 | blog</title>
   <meta name="keywords" content=" mysql ">
-  <meta name="description" content="mysql视图的作用 | blog">
+  <meta name="description" content="mysql索引的作用 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -396,9 +396,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mysql视图的作用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mysql索引的作用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mysql视图的作用</h1>
+        <h1 class="article-title">mysql索引的作用</h1>
     
     <div class="article-meta">
         
@@ -420,7 +420,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:33:58'>2019-08-31 21:33</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 00:03:26'>2019-08-31 23:49</time>
         
     </div>
     <div class="article-meta">
@@ -442,7 +442,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库中视图的运用。"><span class="toc-text">数据库中视图的运用。</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。"><span class="toc-text">相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、单索引"><span class="toc-text">一、单索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、多列索引"><span class="toc-text">二、多列索引</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -457,7 +457,8 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数据库中视图的运用。"><a href="#数据库中视图的运用。" class="headerlink" title="数据库中视图的运用。"></a>数据库中视图的运用。</h2><p>视图的作用其实就是复制了一张表中的所有你想复制的部分，但是有一点，就是视图并不占用你的数据库空间，比如用命令创建一个视图<code>create view view_name as select * from student where name=&quot;小小怪&quot;</code>,view后面的view_name，是视图的名称，我们可以随便取，as后面就是我们需要取的数据，创建成功，我们使用命令<code>show tables;</code>，可以发现视图也存在其中，我们可以认为视图也是一张完整的表，可以对整个视图做表相关的操作，但是有一点需要注意，当我们对视图进行修改或者删除操作的时候，原来表中的数据也会变化，那有的人会问，那视图有什么用，比如一张表有700万条数据，数据库处理不了，我们需要分成7个表进行计算，这个时候，我们如果把数据用视图分成7份不就行了么！当然了删除视图的操作也很简单，只需要输入命令<code>drop view view_name</code>就可以删除视图名称为view_name的视图。</p>
+        <h2 id="相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。"><a href="#相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。" class="headerlink" title="相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。"></a>相信大家在使用数据库的时候都会遇到随着数据的越来越庞大，处理数据的速度越来越慢的问题，这里就给大家介绍数据库的索引的作用。</h2><h2 id="一、单索引"><a href="#一、单索引" class="headerlink" title="一、单索引"></a>一、单索引</h2><p>单索引，当然就是只对数据库中的一个字段添加索引，假如现在存在这一一个表，其中表名为typesim,里面的字段分别为id,movie1,movie2,sim。现在我们的查询语句为<code>select * from typesim where sim&gt;=0.1</code>，可是我们发现当符合条件的数据非常多的时候，查询的速度会变得非常缓慢，这个时候索引就登场了，这里我只对sim进行过滤，因为创建索引的语句可以这样写：<code>alert table &#39;typesim&#39; add index index_name(sim)</code>，这样就为sim字段创建了一个索引，当我们继续使用    <code>select * from typesim where sim&gt;=0.1</code>的时候，我们会发现处理的速度是非常快的。</p>
+<h2 id="二、多列索引"><a href="#二、多列索引" class="headerlink" title="二、多列索引"></a>二、多列索引</h2><p>同样以上面的表举例，现在我要查询movie1 = 1的所有相似度的平均值，可以这样创建索引<code>create index  movie1_sim(这个是索引的名字，可以随便取) on typesim(movie1, sim)</code>，当我们使用<code>select avg(sim) as sim_avg from typesim where movie1=1</code>的时候查询的速度是非常快的，因为数据已经在索引里面了，就不需要再去检索表中的数据了，所以速度是非常之快的。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -471,12 +472,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mysql视图的作用</p>
+    <p><span class="copy-title">文章标题:</span>mysql索引的作用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:33:08</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:33:58</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mysql视图的作用/" title="mysql视图的作用">http://yoursite.com/2019/08/31/mysql视图的作用/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-31, 23:49:39</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 00:03:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mysql索引的作用/" title="mysql索引的作用">http://yoursite.com/2019/08/31/mysql索引的作用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
