@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>前端html学习方法 | blog</title>
-  <meta name="keywords" content=" 编程 , html ">
-  <meta name="description" content="前端html学习方法 | blog">
+  <title>python中filter,lambda,map函数的使用 | blog</title>
+  <meta name="keywords" content=" 编程 , python ">
+  <meta name="description" content="python中filter,lambda,map函数的使用 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -400,9 +400,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-前端html学习方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python中filter-lambda-map函数的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">前端html学习方法</h1>
+        <h1 class="article-title">python中filter,lambda,map函数的使用</h1>
     
     <div class="article-meta">
         
@@ -410,7 +410,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="前端">前端</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
@@ -419,14 +419,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color5">html</a>
+            <a href="javascript:" class="color2">python</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 18:02:40'>2019-08-31 17:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 17:28:17'>2019-09-01 17:25</time>
         
     </div>
     <div class="article-meta">
@@ -448,7 +448,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"><span class="toc-text">今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、了解标签元素"><span class="toc-text">一、了解标签元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、能够定位元素到任意位置"><span class="toc-text">二、能够定位元素到任意位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、CSS样式的编写"><span class="toc-text">三、CSS样式的编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、多观察，多积累"><span class="toc-text">四、多观察，多积累</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda函数的用法"><span class="toc-text">lambda函数的用法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter函数的作用是过滤掉我们不需要的数"><span class="toc-text">filter函数的作用是过滤掉我们不需要的数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map函数用法"><span class="toc-text">map函数用法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -463,12 +463,20 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"><a href="#今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写" class="headerlink" title="今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写"></a>今天”小小怪”教0基础的同学如何在最快的时间内学会html静态页面的编写</h2><h2 id="一、了解标签元素"><a href="#一、了解标签元素" class="headerlink" title="一、了解标签元素"></a>一、了解标签元素</h2><p>首先我们需要大部分的标签元素，如果说让你一下子了解所有的标签元素，想来也是不切合实际的，因此我们需要了解网站里面最基本的标签元素，比如a,div,p,ul,h1,h2,h3,h4,dd,dt等等其他经常用到的标签。</p>
-<h2 id="二、能够定位元素到任意位置"><a href="#二、能够定位元素到任意位置" class="headerlink" title="二、能够定位元素到任意位置"></a>二、能够定位元素到任意位置</h2><p>当我们打开淘宝的时候，你有没有想过一个问题，为什么淘宝的标签放的那么好看，有的同学会觉得，那肯定是个非常牛*的人写的，那我告诉你，给我两天的时间，我能写一个一模一样的，其实只要你知道如果将元素定位是非常重要的，比如div标签的大小，如果放置div标签到自己想要放置的位置，如果使用ul标签，为什么要设置浮动，等等，也就是不管怎么样，我们要知道如何放置元素的位置。</p>
-<h2 id="三、CSS样式的编写"><a href="#三、CSS样式的编写" class="headerlink" title="三、CSS样式的编写"></a>三、CSS样式的编写</h2><p>当我们看到淘宝的时候，那些花里胡哨的图片，字体，当然不是简简单单的用P标签就能实现的了，我们需要给p标签，或者其他的标签添加样式，怎么样才会好看一点呢，这里就需要你自己按照自己的想法去实现了。比如，我使用</p>
-<pre><code>&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;2&lt;/li&gt;</code></pre><p>生成的列表其实是竖着的，但是我想让他横着，那么我们就需要给他添加样式,比如<code>float:left</code>，等等，根据自己的需要去网上寻找答案，就能够学好css样式。</p>
-<h2 id="四、多观察，多积累"><a href="#四、多观察，多积累" class="headerlink" title="四、多观察，多积累"></a>四、多观察，多积累</h2><p>比如说，有的同学就喜欢看各种网页，比如<code>www.xxxx.com</code>，不管是什么网页，你要想一下，如果是我，我会怎么写出这种网页了，如果觉得自己不会这个，那么就需要去网上查找，不要每次都去网上查找，要熟能生巧，当下次再看到的时候能不去网上查找也能写出来。</p>
+        <h2 id="lambda函数的用法"><a href="#lambda函数的用法" class="headerlink" title="lambda函数的用法 "></a>lambda函数的用法 </h2><p>lambda函数的作用主要是创建一个临时的函数，也就是说或者函数在程序中只使用一次，比如 func  =  lambda  x,y: x+ y    调用这个函数时使用func(1,2)实现两个数的相加。</p>
+<h2 id="filter函数的作用是过滤掉我们不需要的数"><a href="#filter函数的作用是过滤掉我们不需要的数" class="headerlink" title="filter函数的作用是过滤掉我们不需要的数"></a>filter函数的作用是过滤掉我们不需要的数</h2><pre><code>filter(None, &#39;101&#39;) # &#39;101&#39;
+filter(None, [True,False]) #[True]
+filter(None, [True, 0, 1, -1]) #[True, 1, -1]，0为false，非0为true
+filter(None, (True, 1, 0, -1, False)) #(True, 1, -1)
+filter(lambda x: x, [-1, 0, 1]) #[-1, 1]
+filter(lambda x: not x, [-1, 0, 1]) #[0]</code></pre><p>举个简单的列子：</p>
+<pre><code>a  =  lambda  x: x&gt;0
+b = [-1, 2, 3, 4, 5]
+c = list(filter(a, b))
+print(c)</code></pre><p>得到结果 [2,3,4,5],注意这个不是列表对象，而是filter对象</p>
+<h2 id="map函数用法"><a href="#map函数用法" class="headerlink" title="map函数用法"></a>map函数用法</h2><p>map函数用法和filter一样 不过map函数可以接受多个参数  比如</p>
+<pre><code>c = list(map(lambda x,y:x+y,  [1,2,3], [3,2,1]))
+print(c)</code></pre><p>得到的结果为[4,4,4]</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -482,12 +490,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>前端html学习方法</p>
+    <p><span class="copy-title">文章标题:</span>python中filter,lambda,map函数的使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 17:37:00</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 18:02:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/前端html学习方法/" title="前端html学习方法">http://yoursite.com/2019/08/31/前端html学习方法/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 17:25:24</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 17:28:17</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中filter-lambda-map函数的使用/" title="python中filter,lambda,map函数的使用">http://yoursite.com/2019/09/01/python中filter-lambda-map函数的使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
