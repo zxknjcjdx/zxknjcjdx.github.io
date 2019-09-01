@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>javascript详解，提供原生js轮轮播 | blog</title>
-  <meta name="keywords" content=" 编程 , javascript ">
-  <meta name="description" content="javascript详解，提供原生js轮轮播 | blog">
+  <title>python爬虫正则表达式的用法 | blog</title>
+  <meta name="keywords" content=" 编程 , python , 正则表达式 ">
+  <meta name="description" content="python爬虫正则表达式的用法 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -420,9 +420,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-javascript详解，提供原生js轮轮播" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python爬虫正则表达式的用法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">javascript详解，提供原生js轮轮播</h1>
+        <h1 class="article-title">python爬虫正则表达式的用法</h1>
     
     <div class="article-meta">
         
@@ -430,7 +430,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="前端">前端</a>
+                <a href="javascript:" data-rel="爬虫">爬虫</a>
             
         </span>
         
@@ -439,14 +439,16 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color1">javascript</a>
+            <a href="javascript:" class="color2">python</a>
+            
+            <a href="javascript:" class="color1">正则表达式</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 16:52:19'>2019-09-01 16:22</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 17:48:18'>2019-09-01 17:31</time>
         
     </div>
     <div class="article-meta">
@@ -468,7 +470,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。"><span class="toc-text">说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、javascript介绍"><span class="toc-text">一、javascript介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、js学习方法"><span class="toc-text">二、js学习方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、js实战"><span class="toc-text">三、js实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、原生js轮播代码"><span class="toc-text">四、原生js轮播代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html代码"><span class="toc-text">html代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式"><span class="toc-text">当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面介绍几个常用的正则表达式"><span class="toc-text">下面介绍几个常用的正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-compile"><span class="toc-text">re.compile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-sub"><span class="toc-text">re.sub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-findall"><span class="toc-text">re.findall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-search"><span class="toc-text">re.search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re-match"><span class="toc-text">re.match</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -483,189 +485,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。"><a href="#说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。" class="headerlink" title="说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。"></a>说道js大家并不陌生，今天我就给大家讲解一下如何掌握好js，以及提供给大家原生的js代码，不过原生的js代码并不好看，需要的小伙伴可以去看一下switch轮播模板。</h2><h2 id="一、javascript介绍"><a href="#一、javascript介绍" class="headerlink" title="一、javascript介绍"></a>一、javascript介绍</h2><p>我们正常看到的网站，那些个花里胡哨的动画，点击之后会出现一些什么好玩的特效啊等等，这些都是Js的功劳。废话不多说，直接教小伙伴们如果去学习js吧。</p>
-<h2 id="二、js学习方法"><a href="#二、js学习方法" class="headerlink" title="二、js学习方法"></a>二、js学习方法</h2><p>当我们去学习js的时候，我们一定要知道我们学习他是想干嘛，我们是想让网页动起来，那目的就很明确了，之前在html里面，我跟大家说过，要了解一些html里面的常用标签，为什么要了解这些标签呢，因为js要用，其实我们js做的工作拿到这些标签之后，让这些标签可以动起来，比如什么几秒我让他出现，几秒我让他消失，点击让他出现，不点击的时候出现，而点击，和键盘的一些操作，我们称之为：事件，给这些标签添加事件也是一个非常关键的内容。下面直接实战。</p>
-<h2 id="三、js实战"><a href="#三、js实战" class="headerlink" title="三、js实战"></a>三、js实战</h2><p>比如说有一个div，id为box，现在里面我有一个图片，id为pic，图片的名称为1.jpg，现在我想让这个图片实现轮播的效果，那么我们首先需要拿到这个图片的标签，以及div标签，怎么拿呢，代码：</p>
-<pre><code>var jsbox = document.getElementById(&quot;box&quot;)
-//这个就拿到了id为box的div标签
-var jsimg = document.getElementById(&quot;pic&quot;)
-//这样我就拿到了id为pic的图片的img标签
-//我们可以想象一下，既然想实现轮播的样子，其实就是改变图片的src属性，这个时候就需要用到定时器，这也是我想给小伙伴们说的，大家记住了，只要是想让页面动起来的操作，都跟定时器有关
-var currentpage = 1
+        <h2 id="当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式"><a href="#当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式" class="headerlink" title="当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式"></a>当我们学习python爬虫的时候，不可避免的要遇到复杂的数据提取，这个时候就用到了万能的正则表达式</h2><h2 id="下面介绍几个常用的正则表达式"><a href="#下面介绍几个常用的正则表达式" class="headerlink" title="下面介绍几个常用的正则表达式"></a>下面介绍几个常用的正则表达式</h2><h2 id="re-compile"><a href="#re-compile" class="headerlink" title="re.compile"></a>re.compile</h2><p><code>compile(pattern,flags)</code>编译之后可以直接当做正则表达式使用，举个简单的例子</p>
+<pre><code>pat = r&#39;1([3,5,7]\d|(47))\d{8}$&#39;
+#其中[3,5,7]表示从3,5,7中的任意一个数字，\d表示数字，\d{8}表示的是8个数字
+re_tele = re.complie(pat)
+re_tele.match(&quot;15380941776&quot;)</code></pre><p>上面是匹配电话号码的正则匹配代码</p>
+<h2 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub"></a>re.sub</h2><pre><code>sub(pattern, repl, string, count=0)
+subn(pattern, repl, string, count=0)</code></pre><p>功能：在目标字符串中以正则表达式的规则匹配字符串，再把他们替换成指定的字符串，可以指定替换的次数，如果不指定，替换所有的匹配字符串。</p>
+<pre><code>pattern:正则表达式
+repl:指定的用来替换的字符串
+string:目标字符串
+count:最多替换次数</code></pre><p>举个简单的例子：</p>
+<pre><code>str = &quot;zxk is a good good good man&quot;
+str1 = re.sub(r&quot;(good)&quot;,&quot;nice&quot;,str,count=2)  
+#意思是将good替换成nice，只替换两个</code></pre><p>返回的结果是：zxk is a nice nice good man，subn可以返回次数</p>
+<h2 id="re-findall"><a href="#re-findall" class="headerlink" title="re.findall"></a>re.findall</h2><pre><code>findall(pattern,string,flags=0)
+patter:匹配的正则表达式
+string:要匹配的字符串
+flags:标志位，用于控制正则表达式的匹配方式</code></pre><p>功能：扫描整个字符串，并返回结果列表，如<code>re.findall(&quot;\d&quot;,&quot;ahajkhka1&quot;)</code>返回的就是<code>[&#39;1&#39;]</code></p>
+<pre><code>\d 匹配数字，效果如[0-9]
+\D 匹配非数字字符，效果如[^0-9]
+\w 匹配数字，字母和下划线，效果同[0-9a-zA-Z_]
+\W 匹配非 数字，字母和下划线
+\s 匹配任意的空白符(空格，换行，回车，换页，制表)，效果同[  \f \n \r \t]
+\S 匹配任意的非空白符，不多说了</code></pre><h2 id="re-search"><a href="#re-search" class="headerlink" title="re.search"></a>re.search</h2><pre><code>search(pattern,string,flags=0)
+patter:匹配的正则表达式
+string:要匹配的字符串
+flags:标志位，用于控制正则表达式的匹配方式</code></pre><p>功能：扫描整个字符串，并返回第一个成功的匹配，注意是第一个</p>
+<h2 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h2><pre><code>match(pattern,string,flags=0)
+patter:匹配的正则表达式
+string:要匹配的字符串
+flags:标志位，用于控制正则表达式的匹配方式，值如下：
+re.I 忽略大小写
+re.L 做本地户识别
+re.M 多行匹配，影响~和$
+re.S 匹配包括换行符在内的所有字符
+re.U 根据Unicode字符集解析字符，影响\w \W \b \B
+re.X 使我们以更灵活的格式理解正则表达式
 
-var timer = setInterval(startloop,1000)
-function startloop(){
-    currentpage++
-    changepage()
-}
-//定时器里面的startloop是需要执行的函数，1000是1秒，后面的单位是以毫秒为单位的。
-function changepage(){
-    if (currentpage == 5)
-    {
-        currentpage = 1
-    }else if(currentpage == 0){
-        currentpage = 4
-    }
-    jsimg.src = &quot;img/&quot; + currentpage + &quot;.png&quot;
-}
-//这里假设只有5张图片，因此，当5.png的时候，其实不存在了，那么我们就需要跳回到第一张上面去，同样0的情况也是如此</code></pre><p>这就实现了简单的轮播效果，我们发现别人的轮播，还会有两个小箭头，点击会实现左边切换图片的效果，同样的，我们需要获取到这个箭头的标签，说明一下，这个箭头大家是可以自己创建的，其实就是个&gt;&lt;而已，我们改变一下他的大小和样式就可以了，现在我们获取他的标签元素,假设他的id为left，<code>var jsleft = document.getElementById(&quot;left&quot;)</code>，现在我们既然要多他进行点击然后实现一个功能，这个就是我们所说的事件，给出代码：</p>
-<pre><code>jsleft.addEventListener(&quot;click&quot;,beforepage,false)
-function beforepage(){
-    currentpage--
-    changepage()
-}</code></pre><p>这样我们点击的时候就实现了换图片的功能了。其实到这里，聪明的小伙伴也就知道怎么写js了，我们只需要拿到我们想要的元素，然后进行我们想要的操作就可以了，至于不会的操作，可以上网查看或者直接去看查找官网的api。</p>
-<h2 id="四、原生js轮播代码"><a href="#四、原生js轮播代码" class="headerlink" title="四、原生js轮播代码"></a>四、原生js轮播代码</h2><h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot; /&gt;
-        &lt;title&gt;&lt;/title&gt;
-        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/style.css&quot;/&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id=&quot;box&quot;&gt;
-            &lt;img src=&quot;img/1.png&quot; id=&quot;pic&quot;/&gt;
-            &lt;ul id=&quot;lists&quot;&gt;
-                &lt;li&gt;1&lt;/li&gt;
-                &lt;li&gt;2&lt;/li&gt;
-                &lt;li&gt;3&lt;/li&gt;
-                &lt;li&gt;4&lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;div id=&quot;left&quot; class=&quot;lr&quot;&gt;&lt;&lt;/div&gt;
-            &lt;div id=&quot;right&quot; class=&quot;lr&quot;&gt;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-
-    &lt;/body&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;js/loop.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;</code></pre><p>css样式代码</p>
-<pre><code>*{
-    padding: 0;
-    margin: 0;
-}
-#box{
-    width: 921px;
-    height: 440px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.lr{
-    width: 50px;
-    height: 80px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    color: black;
-    line-height: 80px;
-    text-align: center;
-    top: 180px;
-    font-size: 30px;
-    display: none;
-}
-
-#left{
-    left: 0;
-}
-
-#right{
-    right: 0;
-}
-
-#lists{
-    list-style: none;
-    position: absolute;
-    bottom: 20px;
-    left: 350px;
-}
-
-#lists li{
-    float: left;
-    width: 20px;
-    height: 20px;
-    background-color: gainsboro;
-    margin: 10px;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 50%;
-}</code></pre><p>js代码：</p>
-<pre><code>var jsbox = document.getElementById(&quot;box&quot;)
-var jsimg = document.getElementById(&quot;pic&quot;)
-var jslist = document.getElementsByTagName(&quot;li&quot;)
-var jsleft = document.getElementById(&quot;left&quot;)
-var jsright = document.getElementById(&quot;right&quot;)
-
-jslist[0].style.backgroundColor = &quot;red&quot;
-
-var currentpage = 1
-
-var timer = setInterval(startloop,1000)
-function startloop(){
-    currentpage++
-    changepage()
-}
-
-
-function changepage(){
-    if (currentpage == 5)
-    {
-        currentpage = 1
-    }else if(currentpage == 0){
-        currentpage = 4
-    }
-    jsimg.src = &quot;img/&quot; + currentpage + &quot;.png&quot;
-    for (var i=0; i&lt;jslist.length; i++)
-        {
-            jslist[i].style.backgroundColor = &quot;gainsboro&quot;
-        }
-    jslist[currentpage-1].style.backgroundColor = &quot;red&quot;
-}
-
-
-jsbox.addEventListener(&quot;mouseover&quot;,funcover,false)
-function funcover(){
-    clearInterval(timer)
-    jsleft.style.display = &quot;block&quot;
-    jsright.style.display = &quot;block&quot;
-}
-
-
-jsbox.addEventListener(&quot;mouseout&quot;,funcout,false)
-function funcout(){
-    timer = setInterval(startloop,1000)
-    jsleft.style.display = &quot;none&quot;
-    jsright.style.display = &quot;none&quot;
-}
-
-jsleft.addEventListener(&quot;mouseover&quot;,deepcolor,false)
-jsright.addEventListener(&quot;mouseover&quot;,deepcolor,false)
-function deepcolor(){
-    this.style.backgroundColor = &quot;rgba(0,0,0,0.7)&quot;
-}
-
-
-jsleft.addEventListener(&quot;mouseout&quot;,orgincolor,false)
-jsright.addEventListener(&quot;mouseout&quot;,orgincolor,false)
-function orgincolor(){
-    this.style.backgroundColor = &quot;rgba(0,0,0,0.2)&quot;
-}
-
-
-jsleft.addEventListener(&quot;click&quot;,beforepage,false)
-function beforepage(){
-    currentpage--
-    changepage()
-}
-jsright.addEventListener(&quot;click&quot;,nextpage,false)
-function nextpage(){
-    currentpage++
-    changepage()
-}
-for (var i=0; i&lt;jslist.length; i++){
-    jslist[i].index = i + 1 
-    jslist[i].addEventListener(&quot;mouseover&quot;,skippage,false)
-    function skippage(){
-        currentpage = this.index
-        changepage()
-    }
-}</code></pre>
+I和S最常用</code></pre><p>举个简单的例子</p>
+<pre><code>re.match(&quot;www&quot;,&quot;www.baidu.com&quot;).span()  可以返回位置
+#返回结果(0,3)其中0是开始的位置，3是结束的前一个位置</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -678,12 +538,12 @@ for (var i=0; i&lt;jslist.length; i++){
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>javascript详解，提供原生js轮轮播</p>
+    <p><span class="copy-title">文章标题:</span>python爬虫正则表达式的用法</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 16:22:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 16:52:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/javascript详解，提供原生js轮轮播/" title="javascript详解，提供原生js轮轮播">http://yoursite.com/2019/09/01/javascript详解，提供原生js轮轮播/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 17:31:39</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 17:48:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python爬虫正则表达式的用法/" title="python爬虫正则表达式的用法">http://yoursite.com/2019/09/01/python爬虫正则表达式的用法/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
