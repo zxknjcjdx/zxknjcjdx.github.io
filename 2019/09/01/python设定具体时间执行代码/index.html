@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mysql视图的作用 | blog</title>
-  <meta name="keywords" content=" mysql ">
-  <meta name="description" content="mysql视图的作用 | blog">
+  <title>python设定具体时间执行代码 | blog</title>
+  <meta name="keywords" content=" 编程 , python ">
+  <meta name="description" content="python设定具体时间执行代码 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -348,9 +348,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mysql视图的作用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python设定具体时间执行代码" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mysql视图的作用</h1>
+        <h1 class="article-title">python设定具体时间执行代码</h1>
     
     <div class="article-meta">
         
@@ -358,21 +358,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">mysql</a>
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color2">python</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:33:58'>2019-08-31 21:33</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 15:11:57'>2019-09-01 14:54</time>
         
     </div>
     <div class="article-meta">
@@ -394,7 +396,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库中视图的运用。"><span class="toc-text">数据库中视图的运用。</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。"><span class="toc-text">小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、准备工作"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、代码讲解"><span class="toc-text">二、代码讲解</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -409,7 +411,28 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数据库中视图的运用。"><a href="#数据库中视图的运用。" class="headerlink" title="数据库中视图的运用。"></a>数据库中视图的运用。</h2><p>视图的作用其实就是复制了一张表中的所有你想复制的部分，但是有一点，就是视图并不占用你的数据库空间，比如用命令创建一个视图<code>create view view_name as select * from student where name=&quot;小小怪&quot;</code>,view后面的view_name，是视图的名称，我们可以随便取，as后面就是我们需要取的数据，创建成功，我们使用命令<code>show tables;</code>，可以发现视图也存在其中，我们可以认为视图也是一张完整的表，可以对整个视图做表相关的操作，但是有一点需要注意，当我们对视图进行修改或者删除操作的时候，原来表中的数据也会变化，那有的人会问，那视图有什么用，比如一张表有700万条数据，数据库处理不了，我们需要分成7个表进行计算，这个时候，我们如果把数据用视图分成7份不就行了么！当然了删除视图的操作也很简单，只需要输入命令<code>drop view view_name</code>就可以删除视图名称为view_name的视图。</p>
+        <h2 id="小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。"><a href="#小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。" class="headerlink" title="小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。"></a>小小怪本人对python代码比较喜欢做一些好玩的东西，比如这个也是为了工作的小伙伴们实现的，在人为设定的时间执行代码。</h2><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>需要导入库文件，分别为time,datatime,以及threading</p>
+<pre><code>import time,datetime
+import threading</code></pre><h2 id="二、代码讲解"><a href="#二、代码讲解" class="headerlink" title="二、代码讲解"></a>二、代码讲解</h2><p>这里小小怪就直接上代码然后讲解</p>
+<pre><code>def test():
+    print(&quot;小小怪是个{}&quot;.format(&quot;大帅比&quot;))
+
+now_time = datatime.datetime.now()
+#获取当前的时间
+next_year = now_time.date().year
+#获取下次时间的年份，这个date()函数加上year可以提取出年份
+next_month = now_time.date().month
+#获取下次时间的月份
+next_day = now_time.date().day
+#获取下次时间的当天
+next_time = datetime.datetime.strptime(str(next_year)+&#39;-&#39;+str(next_month)+&#39;-&#39;+str(next_day)+&#39;02:50:00&#39;,&quot;%Y-%m-%d %H:%M:%S&quot;)
+#拼接时间，其中02:50:00是我们需要它执行的时间
+timer_time = (next_time - now_time).total_seconds()
+#计算两个时间的差距，单位是秒
+timer = threading.Timer(timer_time,func)
+#多少秒之后执行func这个函数
+timer.start()
+#启动这个定时器</code></pre><p>以上代码就可以实现定时执行程序的命令，其中的func你可以换成你自己想要执行的函数，比如你可以在另外一个.py文件里面写好你想要执行的代码，然后将那段代码代入到本段代码中，然后直接调用执行他就可以了。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -423,12 +446,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mysql视图的作用</p>
+    <p><span class="copy-title">文章标题:</span>python设定具体时间执行代码</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:33:08</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:33:58</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mysql视图的作用/" title="mysql视图的作用">http://yoursite.com/2019/08/31/mysql视图的作用/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 14:54:54</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 15:11:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python设定具体时间执行代码/" title="python设定具体时间执行代码">http://yoursite.com/2019/09/01/python设定具体时间执行代码/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
