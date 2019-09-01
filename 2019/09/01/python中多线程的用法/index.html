@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="blog">
+  <title>python中多线程的用法 | blog</title>
+  <meta name="keywords" content=" 编程 , 多线程 , python ">
+  <meta name="description" content="python中多线程的用法 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -49,7 +49,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/touxiang.JPG" />
@@ -390,12 +390,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-python中多线程的用法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于小小怪"><span class="toc-text">关于小小怪</span></a></li></ol></li></ol>
+        <h1 class="article-title">python中多线程的用法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color4">多线程</a>
+            
+            <a href="javascript:" class="color2">python</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-01 17:09:28'>2019-09-01 16:56</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><span class="toc-text">小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、准备工作"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、引入多线程"><span class="toc-text">二、引入多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、多线程总结"><span class="toc-text">三、多线程总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -408,28 +455,62 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于小小怪"><a href="#关于小小怪" class="headerlink" title="关于小小怪"></a>关于小小怪</h2><p><strong>小小怪</strong> 是逗比（周小康）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章。</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><a href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。" class="headerlink" title="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"></a>小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</h2><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>我们需要导入库文件<code>import threading</code>,准备好我们需要执行循环的函数，比如：</p>
+<pre><code>run(a,b):
+    print(a)
+    print(b)
+#这个a我们要求是1到10000000次循环</code></pre><p>当然了实际情况并不是我这种简单的函数。</p>
+<h2 id="二、引入多线程"><a href="#二、引入多线程" class="headerlink" title="二、引入多线程"></a>二、引入多线程</h2><p>其实多线程换句话说：就是一种分布式，程序同时执行，互不影响，每一个线程之处理自己的部分。现在我要开4个线程去执行上面那个函数，代码：</p>
+<pre><code>t1 = threading.Thread(target=run, args=(1,25000000))
+t2 = threading.Thread(target=run, args=(25000000,50000000))
+t3 = threading.Thread(target=run, args=(50000000,75000000))
+t4 = threading.Thread(target=run, args=(25000000,10000000))
+#其中的target是我们需要执行的函数，args是传入的参数，需要注意一点，args必须是一个元祖，加入只有一个参数，就这样传入`args=(2,)`
+t1.start()
+t2.start()
+t3.start()
+t4.start()
+#启动所有线程
+#如果下面还有其他操作，加上如下代码
+t1.join()
+t2.join()
+t3.join()
+t4.join()</code></pre><h2 id="三、多线程总结"><a href="#三、多线程总结" class="headerlink" title="三、多线程总结"></a>三、多线程总结</h2><p>大家不要觉得多线程原来就这样用而已，我们日常看到的服务器的多用户登录什么的，都是用的多线程去处理的，下一次，我将给大家用python的多线程写一个完整的服务器代码</p>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>python中多线程的用法</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 16:56:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 17:09:28</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中多线程的用法/" title="python中多线程的用法">http://yoursite.com/2019/09/01/python中多线程的用法/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">QQ1990858822 周小康</p>
