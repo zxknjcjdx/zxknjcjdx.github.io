@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mongodb非关系数据的基本操作 | blog</title>
-  <meta name="keywords" content=" mongodb ">
-  <meta name="description" content="mongodb非关系数据的基本操作 | blog">
+  <title>python爬虫选择器的使用 | blog</title>
+  <meta name="keywords" content=" 编程 , python , 爬虫选择器 ">
+  <meta name="description" content="python爬虫选择器的使用 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -444,9 +444,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mongodb非关系数据的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python爬虫选择器的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mongodb非关系数据的基本操作</h1>
+        <h1 class="article-title">python爬虫选择器的使用</h1>
     
     <div class="article-meta">
         
@@ -454,21 +454,25 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="爬虫">爬虫</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">mongodb</a>
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color2">python</a>
+            
+            <a href="javascript:" class="color1">爬虫选择器</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:58:47'>2019-08-31 21:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 19:47:15'>2019-09-01 19:32</time>
         
     </div>
     <div class="article-meta">
@@ -490,7 +494,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><span class="toc-text">非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mongodb的安装"><span class="toc-text">一、mongodb的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mongo的简单命令操作"><span class="toc-text">二、mongo的简单命令操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。"><span class="toc-text">在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式选择器"><span class="toc-text">正则表达式选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS选择器"><span class="toc-text">CSS选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xpath选择器"><span class="toc-text">xpath选择器</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -505,8 +509,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><a href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。" class="headerlink" title="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"></a>非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</h2><h2 id="一、mongodb的安装"><a href="#一、mongodb的安装" class="headerlink" title="一、mongodb的安装"></a>一、mongodb的安装</h2><p>这个还是需要大家自己去网上查找安装教程，安装配置完毕之后，win+r输入cmd进入控制台之后，输入mongo，当我们成功进入到mongo的控制台之后，说明安装和配置是没有问题的。</p>
-<h2 id="二、mongo的简单命令操作"><a href="#二、mongo的简单命令操作" class="headerlink" title="二、mongo的简单命令操作"></a>二、mongo的简单命令操作</h2><p>查看数据库命令，<code>show dbs</code>可以查看mongo的所有数据库，使用数据库命令和mysql是一样的，比如<code>use student</code>，这个时候我们会进入到student数据库下面，查看表命令，在mongo里面不是表，而是一种集合，因此命令为<code>show collections;</code>查看表中的所有数据的操作为<code>db.student.find()</code>,这个会显示出所有的数据，有的人觉得太多了，有没有像Mysql的where语句的过滤呢，当然是有的，不过在此之前，我们需要一个事情就是，在mongo中的所有数据都是以json的形式存在，也就是说键值对的形式存在的。因此查询语句需要这样写<code>db.student.find({number: {$all : [111,222]}})</code>这个语句的意思是查询number为111和222的所有记录。正常我们查询时，还会加上pretty(),这个是为了是展示出来的数据比较好看一点，如<code>db.student.find().pretty()</code>,这时展示出来的数据是json类型的，看起来比较舒服一点。</p>
+        <h2 id="在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。"><a href="#在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。" class="headerlink" title="在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。"></a>在爬虫中，我们首先要能定位到我们需要获取的元素，这个时候就需要使用合适的选择器去定位。</h2><h2 id="正则表达式选择器"><a href="#正则表达式选择器" class="headerlink" title="正则表达式选择器"></a>正则表达式选择器</h2><p>如果要选择a标签中的Name后面的值，可以这样写：<code>reponse.xpath(&#39;//a/text()&#39;).re(&#39;Name:\s(.*)&#39;)</code>括号里面就是我们要输出的值，其中\s代表特殊字符 如：空格等等。另外如果想要匹配返回的第一个值    <code>reponse.xpath(&#39;//a/text()&#39;).re_first(&#39;Name:\s(.*)&#39;)</code>，另外注意一个问题 如果只想匹配一个字符串前面的几个 然后后面的不想匹配的话可以加一个？这个表示非贪心匹配。</p>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>假如选择一个a节点<code>response.css(&#39;a&#39;)</code>即可，如果要选择a节点中的img属性<code>response.css(&#39;a[href=&quot;image1.html&quot;] img&#39;).extract</code>这样就可以得到图片的属性，注意一点img前面有一个空格。如果要获得a标签内部的文本可以这样写：<code>response.css(&#39;[href=&quot;image1.html&quot;]::text&#39;).extract()</code>，如果要获取a标签里面的img标签的可以这样写：<code>response.css(&#39;a[href=&quot;image1.html&quot;] img::attr(src)&#39;).extract()</code>，如果要获取a标签里面的img标签下面的所有内容可以这样写： </p>
+<pre><code>第一种：response.xpath(&#39;//a/img/@src&#39;).extract()
+第二种： response.xpath(&#39;//a&#39;).css(&#39;img&#39;).xpath(&#39;@src&#39;).extract()
+第三种:response.css(&#39;a img::attr(src)&#39;).extract()</code></pre><h2 id="xpath选择器"><a href="#xpath选择器" class="headerlink" title="xpath选择器"></a>xpath选择器</h2><p>xpath选择器中，使用//代表从html结点开始提取信息，如果采用.（点）   则代表提取元素内部的数据，比如从a结点中提取当中的img属性，只需要<code>xpath(&quot;./img&quot;)</code>就可以了。如果要提取a标签中的文本的信息，<code>xpath(&quot;//a/text()&quot;).extract()</code>，如果要提取a标签中的href标签的信息<code>xpath(&quot;//a/@href&quot;).extract()</code>，如果提取某一个标签当中的值不存在时，继续这样会报错，所以我们需要用到<code>extract_first()</code>，比如：<code>xpath(&#39;//a[@href=&quot;omgass&quot;]&#39;).extract_first(&quot;default image&quot;)</code>，如果不存在就用<code>defalut image</code>返回信息。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -520,12 +527,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mongodb非关系数据的基本操作</p>
+    <p><span class="copy-title">文章标题:</span>python爬虫选择器的使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:36:09</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:58:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mongodb非关系数据的基本操作/" title="mongodb非关系数据的基本操作">http://yoursite.com/2019/08/31/mongodb非关系数据的基本操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 19:32:00</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 19:47:15</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python爬虫选择器的使用/" title="python爬虫选择器的使用">http://yoursite.com/2019/09/01/python爬虫选择器的使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

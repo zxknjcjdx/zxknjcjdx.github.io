@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mongodb非关系数据的基本操作 | blog</title>
-  <meta name="keywords" content=" mongodb ">
-  <meta name="description" content="mongodb非关系数据的基本操作 | blog">
+  <title>使用request实现简单的网页爬虫 | blog</title>
+  <meta name="keywords" content=" 编程 , python , request爬虫 ">
+  <meta name="description" content="使用request实现简单的网页爬虫 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -444,9 +444,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mongodb非关系数据的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-使用request实现简单的网页爬虫" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mongodb非关系数据的基本操作</h1>
+        <h1 class="article-title">使用request实现简单的网页爬虫</h1>
     
     <div class="article-meta">
         
@@ -454,21 +454,25 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="爬虫">爬虫</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">mongodb</a>
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color2">python</a>
+            
+            <a href="javascript:" class="color5">request爬虫</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:58:47'>2019-08-31 21:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 19:28:25'>2019-09-01 19:07</time>
         
     </div>
     <div class="article-meta">
@@ -490,7 +494,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><span class="toc-text">非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mongodb的安装"><span class="toc-text">一、mongodb的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mongo的简单命令操作"><span class="toc-text">二、mongo的简单命令操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。"><span class="toc-text">今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、准备工作"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、编写获取html信息代码"><span class="toc-text">二、编写获取html信息代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、如果获取网页的信息"><span class="toc-text">三、如果获取网页的信息</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -505,8 +509,18 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><a href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。" class="headerlink" title="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"></a>非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</h2><h2 id="一、mongodb的安装"><a href="#一、mongodb的安装" class="headerlink" title="一、mongodb的安装"></a>一、mongodb的安装</h2><p>这个还是需要大家自己去网上查找安装教程，安装配置完毕之后，win+r输入cmd进入控制台之后，输入mongo，当我们成功进入到mongo的控制台之后，说明安装和配置是没有问题的。</p>
-<h2 id="二、mongo的简单命令操作"><a href="#二、mongo的简单命令操作" class="headerlink" title="二、mongo的简单命令操作"></a>二、mongo的简单命令操作</h2><p>查看数据库命令，<code>show dbs</code>可以查看mongo的所有数据库，使用数据库命令和mysql是一样的，比如<code>use student</code>，这个时候我们会进入到student数据库下面，查看表命令，在mongo里面不是表，而是一种集合，因此命令为<code>show collections;</code>查看表中的所有数据的操作为<code>db.student.find()</code>,这个会显示出所有的数据，有的人觉得太多了，有没有像Mysql的where语句的过滤呢，当然是有的，不过在此之前，我们需要一个事情就是，在mongo中的所有数据都是以json的形式存在，也就是说键值对的形式存在的。因此查询语句需要这样写<code>db.student.find({number: {$all : [111,222]}})</code>这个语句的意思是查询number为111和222的所有记录。正常我们查询时，还会加上pretty(),这个是为了是展示出来的数据比较好看一点，如<code>db.student.find().pretty()</code>,这时展示出来的数据是json类型的，看起来比较舒服一点。</p>
+        <h2 id="今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。"><a href="#今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。" class="headerlink" title="今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。"></a>今天给小伙伴们讲解一下python的爬虫，使用request库实现简单的网页内容的爬取。</h2><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>使用pip下载request库，命令<code>pip install request</code>，在程序中导入request，<code>import request</code>。</p>
+<h2 id="二、编写获取html信息代码"><a href="#二、编写获取html信息代码" class="headerlink" title="二、编写获取html信息代码"></a>二、编写获取html信息代码</h2><p>使用request库爬虫，首先我们需要获取到网页的内容，也就是还没有渲染的html代码，编写如下代码：</p>
+<pre><code>def getHtml(url):
+    try:
+        html = requests.get(url,timeout=30)
+        html.encoding = html.apparent_encoding
+        if html.status_code ==200:
+            print(&quot;获取信息成功&quot;)
+    except:
+        print(&quot;获取数据失败&quot;)
+    return html.text</code></pre><p>参数url是我们需要传入的网址，比如百度的网址，<code>request.get(url,timeout=30)</code>这个可以得到网页的内容，但并不是html的内容，后面一行的代码是设置编码格式，其中<code>html.apperent_enconding</code>可以帮我们自动检测当前网页的编码格式，然后我们将其设置为整个网页的编码格式即可，获取成功的状态码是200，最后返回的<code>html.text</code>就是我们需要的html文本。</p>
+<h2 id="三、如果获取网页的信息"><a href="#三、如果获取网页的信息" class="headerlink" title="三、如果获取网页的信息"></a>三、如果获取网页的信息</h2><p>获取网页信息，也就是获取html对应的网页内容，首先我们打开任意一个网页，比如淘宝吧，进入页面之后，按F12或者鼠标右键检查元素，进入到网页的开发者模式，这个时候我们在淘宝随便输入一个字段，比如ipad，点击确认，我们点击开发者模式的上面第一个有鼠标样式的东西，然后我们鼠标指到哪儿，就会自动帮我们定位到html代码的部分，比如现在我想获取一个td标签class属性为result_text当中a标签下面的href属性里面的网页链接，可以使用<code>u = html.xpath(&quot;//td[@class=&#39;result_text&#39;]/a/@href&quot;)</code>，当然了，在此之前我们还需要导入库etree提供的xpath方法，<code>from lxml import etree</code>，同样使用pip安装lxml，<code>pip install lxml</code>，这个时候，我们获取到的u里面存放的就是我们需要的信息。当需要进行多个网页爬取的时候，可以观察网页url的规律，然后用循环去解决，其实简单的网页爬虫，使用request和etree就足够解决了。对于选择器的定位，小小怪会单独讲解。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -520,12 +534,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mongodb非关系数据的基本操作</p>
+    <p><span class="copy-title">文章标题:</span>使用request实现简单的网页爬虫</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:36:09</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:58:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mongodb非关系数据的基本操作/" title="mongodb非关系数据的基本操作">http://yoursite.com/2019/08/31/mongodb非关系数据的基本操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 19:07:42</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 19:28:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/使用request实现简单的网页爬虫/" title="使用request实现简单的网页爬虫">http://yoursite.com/2019/09/01/使用request实现简单的网页爬虫/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
