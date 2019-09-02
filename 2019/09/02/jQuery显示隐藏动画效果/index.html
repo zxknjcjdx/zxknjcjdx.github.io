@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>python中对mysql数据库的操作 | blog</title>
-  <meta name="keywords" content=" 编程 , python , mysql ">
-  <meta name="description" content="python中对mysql数据库的操作 | blog">
+  <title>jQuery显示隐藏动画效果 | blog</title>
+  <meta name="keywords" content=" 编程 , javascript ">
+  <meta name="description" content="jQuery显示隐藏动画效果 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -471,9 +471,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python中对mysql数据库的操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jQuery显示隐藏动画效果" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python中对mysql数据库的操作</h1>
+        <h1 class="article-title">jQuery显示隐藏动画效果</h1>
     
     <div class="article-meta">
         
@@ -481,7 +481,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="前端">前端</a>
             
         </span>
         
@@ -490,16 +490,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color2">python</a>
-            
-            <a href="javascript:" class="color1">mysql</a>
+            <a href="javascript:" class="color1">javascript</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 00:53:58'>2019-09-01 00:09</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-02 16:15:55'>2019-09-02 15:56</time>
         
     </div>
     <div class="article-meta">
@@ -521,7 +519,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"><span class="toc-text">之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、连接操作"><span class="toc-text">一、连接操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、操作数据库"><span class="toc-text">二、操作数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询操作"><span class="toc-text">查询操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新操作"><span class="toc-text">更新操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入操作"><span class="toc-text">插入操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery的显示和隐藏动画效果，直接上代码"><span class="toc-text">jQuery的显示和隐藏动画效果，直接上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加事件"><span class="toc-text">添加事件</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -536,25 +534,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"><a href="#之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。" class="headerlink" title="之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"></a>之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。</h2><h2 id="一、连接操作"><a href="#一、连接操作" class="headerlink" title="一、连接操作"></a>一、连接操作</h2><p>IDE的选择，我选用的是pycharm，需要用到的库，pymysql,aconada命令下载：<code>conda install pymysql</code>,pip命令下载：<code>pip install pymysql</code>，之所以不用其他的连接库是因为会出现一些莫名其妙的问题，解决起来比较麻烦，可能一开始没什么问题，但是后面的问题会越来越多。因此我这里使用pymysql库进行数据库的连接操作：</p>
-<pre><code>import pymysql
-conn = pymysql.connect(&#39;localhost&#39;,&#39;用户名&#39;,&#39;密码&#39;,&#39;数据库名&#39;)
-cursor = conn.cursor()</code></pre><p>解释一点参数的意思，第一个参数是连接的ip，本机连接的话，localhost,或者127.0.0.1或都是可以的，如果需要连接到远程服务器的数据库，那么这里填写的即使远程服务器的ip地址，第二个参数是你的用户名，默认情况下是root，密码就是安装数据库的时候设置的密码，最后一个参数是数据库的名字，比如之前文章中的student。cursor是游标，可以简单的理解游标为指向结果集记录的指针，利用游标可以把返回它当前指向 的行记录（只能返回一行记录）。如果要返回多行，那么需要不断滚动游标，把想要的数据查询一遍。用户可以操作游标所在位置行的记录。</p>
-<h2 id="二、操作数据库"><a href="#二、操作数据库" class="headerlink" title="二、操作数据库"></a>二、操作数据库</h2><h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><p>比如有一张表名为typesim，其中有字段id,movie1,movie2,sim，现在我需要取出所有sim&gt;=0.1的movie1和movie2供我使用，那么怎么做呢？具体操作代码如下：</p>
-<pre><code>sql = &quot;select movie1,movie2 from typesim where sim&gt;=0.1&quot;
-cursor.execute(sql)
-movie_lists = cursor.fetchall()</code></pre><p>解释一下代码的意思，第一行编写sql语句，不懂的小伙伴可以去看我博客mysql的简单命令，第二行代码的意思是执行这个sql语句，第三行代码的意思是将所有符合条件的数据放在movie_lists里面，这个movie_lists是一个列表，当我们需要取出每一对数据的时候就需要对movie_lists进行遍历，代码如下：</p>
-<pre><code>for movie_list in movie_lists:
-    movie1_id = movie_list[0]
-    movie2_id = movie_list[1]</code></pre><p>这样我们在movie1_id里面就是一个movie1的数据，movie2_id就是跟movie1对应movie2的一个数据，具体想怎么操作还是看自己的需求了。当然，这里只是给出简单的操作，操作数据库的方法在这里都是同样的步骤，你要知道，当你能把数据库里面的数据取出来随便你使用的时候，那是多么方便的一件事情，在算法的编写方面，以及一些数据隐藏信息的挖掘方面会带来多大的便利呢？</p>
-<h2 id="更新操作"><a href="#更新操作" class="headerlink" title="更新操作"></a>更新操作</h2><p>这个其实用的也是比较多的，主要用在当我们只需要对表中的一列数据进行多次操作的时候，比如我们对上面表中的sim数据需要进行更新，那么代码如下：</p>
-<pre><code>sql = &#39;update typesim set sim=%d where movie1=%d and movie2=%d&#39; % (similarity,i,j)
-cursor.execute(sql)
-conn.commit()</code></pre><p>解释一下代码的含义，第一行是mysql的语法，其中%d是占位符，可以理解为用后面括号里面的数据代替他们，其中similarity,i,j为前面代码给出的数据，然后我们使用execute去执行这段代码，不同于查询语句的是，我们需要对数据进行提交到数据库的操作，因此第三行代码<code>conn.commit()</code>就是将数据提交到mysql数据库。</p>
-<h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>这里其实和更新操作差不多，直接上代码：</p>
-<pre><code>sql = &#39;insert into typesim(movie1,movie2,sim) values(%d,%d,%d)&#39; % (i,j,similarity)
-cursor.execute(sql)
-conm.commit()</code></pre><p>mysql简单语法操作不懂的小伙伴可以去看看我的mysql简单命令，足够大家用了。</p>
+        <h2 id="jQuery的显示和隐藏动画效果，直接上代码"><a href="#jQuery的显示和隐藏动画效果，直接上代码" class="headerlink" title="jQuery的显示和隐藏动画效果，直接上代码"></a>jQuery的显示和隐藏动画效果，直接上代码</h2><p>首先我们需要在head里面导入jquey</p>
+<pre><code>&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>加上现在body里面有一个div的标签，id为box，另外还有3个按钮，id分别为bt1,bt2,bt3，代码展示：</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;&lt;div&gt;
+    &lt;button id=&quot;bt1&quot;&gt;隐藏&lt;/button&gt;
+    &lt;button id=&quot;bt2&quot;&gt;出现&lt;/button&gt;
+    &lt;button id=&quot;bt3&quot;&gt;自动转换&lt;/button&gt;
+&lt;/body&gt;</code></pre><p>当然了，我们还需要给div设置一下样式，不然页面是显示不出来的，样式直接在head里面写。</p>
+<pre><code>&lt;head&gt;
+    &lt;style tyle=&quot;text/css&quot;&gt;
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre><p>现在我们的样式就写好了，可以打开页面看一下效果，当然了，点击按钮是没有任何反应的，因为我们还没有给按钮添加任何的事件。</p>
+<h2 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h2><p>在body里面写上如下代码：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    $div = $(&quot;#box&quot;)
+//获取到id为Box的元素
+    $(&quot;#bt1&quot;).click(function){
+        $div.hove(1000,function(){
+                alert(&#39;1秒之后隐藏&#39;)        
+        })
+    }
+    $(&quot;#bt2&quot;).click(function){
+        $div.show(1000,function(){
+                alert(&#39;1秒之后出现&#39;)        
+        })
+    }
+    $(&quot;#bt3&quot;).click(function){
+        $div.toggle(1000,function(){
+                alert(&#39;隐藏时点击出现，反之亦然&#39;)        
+        })
+    }
+&lt;/script&gt;</code></pre><p>以上代码中的hove函数是隐藏的意思，其中的参数第一个是消失的时间，就是在1秒之后会完全消失，show跟他相反，他是出现的意思，参数完全一样，后面还可以追加函数，这个函数会当我们前面的时间结束之后才执行。而toggle则融合了这两个方法，当元素是隐藏时，点击可以出现，当元素是出现的状态，点击会自动隐藏。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -568,12 +588,12 @@ conm.commit()</code></pre><p>mysql简单语法操作不懂的小伙伴可以去�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>python中对mysql数据库的操作</p>
+    <p><span class="copy-title">文章标题:</span>jQuery显示隐藏动画效果</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 00:09:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 00:53:58</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中对mysql数据库的操作/" title="python中对mysql数据库的操作">http://yoursite.com/2019/09/01/python中对mysql数据库的操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-02, 15:56:57</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-02, 16:15:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/jQuery显示隐藏动画效果/" title="jQuery显示隐藏动画效果">http://yoursite.com/2019/09/02/jQuery显示隐藏动画效果/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
