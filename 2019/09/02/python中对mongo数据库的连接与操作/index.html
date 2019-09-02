@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>python中对mysql数据库的操作 | blog</title>
-  <meta name="keywords" content=" 编程 , mysql , python ">
-  <meta name="description" content="python中对mysql数据库的操作 | blog">
+  <title>python中对mongo数据库的连接与操作 | blog</title>
+  <meta name="keywords" content=" 编程 , mongodb , python ">
+  <meta name="description" content="python中对mongo数据库的连接与操作 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -455,9 +455,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python中对mysql数据库的操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python中对mongo数据库的连接与操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python中对mysql数据库的操作</h1>
+        <h1 class="article-title">python中对mongo数据库的连接与操作</h1>
     
     <div class="article-meta">
         
@@ -474,7 +474,7 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color1">mysql</a>
+            <a href="javascript:" class="color3">mongodb</a>
             
             <a href="javascript:" class="color2">python</a>
             
@@ -483,7 +483,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 00:53:58'>2019-09-01 00:09</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-02 09:50:44'>2019-09-02 09:15</time>
         
     </div>
     <div class="article-meta">
@@ -505,7 +505,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"><span class="toc-text">之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、连接操作"><span class="toc-text">一、连接操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、操作数据库"><span class="toc-text">二、操作数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询操作"><span class="toc-text">查询操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新操作"><span class="toc-text">更新操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入操作"><span class="toc-text">插入操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。"><span class="toc-text">之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码展示："><span class="toc-text">代码展示：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -520,25 +520,32 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"><a href="#之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。" class="headerlink" title="之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。"></a>之前文章中介绍了mysql在自己的控制台下的操作，但是我们之所以使用数据库当然是为了我们编程工作的喽！这里我将介绍python连接mysql的相关操作。</h2><h2 id="一、连接操作"><a href="#一、连接操作" class="headerlink" title="一、连接操作"></a>一、连接操作</h2><p>IDE的选择，我选用的是pycharm，需要用到的库，pymysql,aconada命令下载：<code>conda install pymysql</code>,pip命令下载：<code>pip install pymysql</code>，之所以不用其他的连接库是因为会出现一些莫名其妙的问题，解决起来比较麻烦，可能一开始没什么问题，但是后面的问题会越来越多。因此我这里使用pymysql库进行数据库的连接操作：</p>
-<pre><code>import pymysql
-conn = pymysql.connect(&#39;localhost&#39;,&#39;用户名&#39;,&#39;密码&#39;,&#39;数据库名&#39;)
-cursor = conn.cursor()</code></pre><p>解释一点参数的意思，第一个参数是连接的ip，本机连接的话，localhost,或者127.0.0.1或都是可以的，如果需要连接到远程服务器的数据库，那么这里填写的即使远程服务器的ip地址，第二个参数是你的用户名，默认情况下是root，密码就是安装数据库的时候设置的密码，最后一个参数是数据库的名字，比如之前文章中的student。cursor是游标，可以简单的理解游标为指向结果集记录的指针，利用游标可以把返回它当前指向 的行记录（只能返回一行记录）。如果要返回多行，那么需要不断滚动游标，把想要的数据查询一遍。用户可以操作游标所在位置行的记录。</p>
-<h2 id="二、操作数据库"><a href="#二、操作数据库" class="headerlink" title="二、操作数据库"></a>二、操作数据库</h2><h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><p>比如有一张表名为typesim，其中有字段id,movie1,movie2,sim，现在我需要取出所有sim&gt;=0.1的movie1和movie2供我使用，那么怎么做呢？具体操作代码如下：</p>
-<pre><code>sql = &quot;select movie1,movie2 from typesim where sim&gt;=0.1&quot;
-cursor.execute(sql)
-movie_lists = cursor.fetchall()</code></pre><p>解释一下代码的意思，第一行编写sql语句，不懂的小伙伴可以去看我博客mysql的简单命令，第二行代码的意思是执行这个sql语句，第三行代码的意思是将所有符合条件的数据放在movie_lists里面，这个movie_lists是一个列表，当我们需要取出每一对数据的时候就需要对movie_lists进行遍历，代码如下：</p>
-<pre><code>for movie_list in movie_lists:
-    movie1_id = movie_list[0]
-    movie2_id = movie_list[1]</code></pre><p>这样我们在movie1_id里面就是一个movie1的数据，movie2_id就是跟movie1对应movie2的一个数据，具体想怎么操作还是看自己的需求了。当然，这里只是给出简单的操作，操作数据库的方法在这里都是同样的步骤，你要知道，当你能把数据库里面的数据取出来随便你使用的时候，那是多么方便的一件事情，在算法的编写方面，以及一些数据隐藏信息的挖掘方面会带来多大的便利呢？</p>
-<h2 id="更新操作"><a href="#更新操作" class="headerlink" title="更新操作"></a>更新操作</h2><p>这个其实用的也是比较多的，主要用在当我们只需要对表中的一列数据进行多次操作的时候，比如我们对上面表中的sim数据需要进行更新，那么代码如下：</p>
-<pre><code>sql = &#39;update typesim set sim=%d where movie1=%d and movie2=%d&#39; % (similarity,i,j)
-cursor.execute(sql)
-conn.commit()</code></pre><p>解释一下代码的含义，第一行是mysql的语法，其中%d是占位符，可以理解为用后面括号里面的数据代替他们，其中similarity,i,j为前面代码给出的数据，然后我们使用execute去执行这段代码，不同于查询语句的是，我们需要对数据进行提交到数据库的操作，因此第三行代码<code>conn.commit()</code>就是将数据提交到mysql数据库。</p>
-<h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>这里其实和更新操作差不多，直接上代码：</p>
-<pre><code>sql = &#39;insert into typesim(movie1,movie2,sim) values(%d,%d,%d)&#39; % (i,j,similarity)
-cursor.execute(sql)
-conm.commit()</code></pre><p>mysql简单语法操作不懂的小伙伴可以去看看我的mysql简单命令，足够大家用了。</p>
+        <h2 id="之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。"><a href="#之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。" class="headerlink" title="之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。"></a>之前将过了mongo数据的控制台的简单命令，今天说一下，在python中我们如何操作mongo数据库。</h2><p>Mongo中创建一个集合可以使用<code>db.createCollection(&#39;表名&#39;)</code>，在Mongo中创建的是集合，在Mysql中创建的叫做表，因为在mongo中你需要存储的数据是不需要约束的，你想存入图片或者其他类型的数据都是可以直接存储的。</p>
+<h2 id="代码展示："><a href="#代码展示：" class="headerlink" title="代码展示："></a>代码展示：</h2><p>在实际的查询中会遇到一些问题，那就是在python中如果要查询某一个字段的话，直接输出是不行的，因为他返回的是一个生成器。比如：</p>
+<pre><code>import pymongo
+client = pymongo.MongoClient(host=&#39;localhost&#39;,port=27017)
+#这个是连接到mongo的数据库连接操作,port是端口号，mongo数据库默认的端口号是27017.
+db = client.test
+#test是我们mongo里面的一个数据库
+collection = db.student
+#获取test数据库里面student的集合
+results = collection.find({&#39;name&#39;:{&#39;$regex&#39;:&#39;^J.*&#39;}})
+#其中name后面使用的是正则表达式，意思是匹配name字段中所有以j开头的
+#这是我们想要直接使用print(results)是得不到结果的，换句话说会报错，错误的大概意思就是，这是个迭代器，不能够直接输出。
+#如果只想返回一个结果，可以使用
+print(results.next())
+#聪明的小伙伴已经想到了，如果我想要全部获取写个循环不就可以了
+for i in range(len(results)):
+    print(results.next())
+#如果小伙伴们想要把所有的数据给提取出来，就多加个全局的列表去存储，比如
+results_list = []
+for i in range(len(results)):
+    results_list.append(results.next())
+print(results_list)
+#当然了，熟悉python的小伙伴，应该知道对于这种类似于迭代器，列表，元祖，字典等类型的，是可以使用另外一种循环遍历的，比如：
+results_list = []
+for result in results:
+    result_list.append(result)</code></pre><p>其实当我们已经能够拿到表之后，操作数据就比较方便了，上面我使用了正则去获取数据，其实这都是mongo给我们写好的获取方式，比如说我要获取以J结尾的，那么又是另外一种表达式，这个还是看小伙伴们的具体需求，需要什么样的操作可以自行百度查看，菜鸟教程可以多看看，里面总结了很多基础的操作。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -552,12 +559,12 @@ conm.commit()</code></pre><p>mysql简单语法操作不懂的小伙伴可以去�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>python中对mysql数据库的操作</p>
+    <p><span class="copy-title">文章标题:</span>python中对mongo数据库的连接与操作</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 00:09:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 00:53:58</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中对mysql数据库的操作/" title="python中对mysql数据库的操作">http://yoursite.com/2019/09/01/python中对mysql数据库的操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-02, 09:15:51</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-02, 09:50:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/python中对mongo数据库的连接与操作/" title="python中对mongo数据库的连接与操作">http://yoursite.com/2019/09/02/python中对mongo数据库的连接与操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
