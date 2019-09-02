@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>创建ftp站点实现局域网下的文件共享 | blog</title>
-  <meta name="keywords" content=" 编程 , ftp站点 ">
-  <meta name="description" content="创建ftp站点实现局域网下的文件共享 | blog">
+  <title>jQuery事件弹出窗口，取消不跳转 | blog</title>
+  <meta name="keywords" content=" 编程 , javascript ">
+  <meta name="description" content="jQuery事件弹出窗口，取消不跳转 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -463,9 +463,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-创建ftp站点实现局域网下的文件共享" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jQuery事件弹出窗口，取消不跳转" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">创建ftp站点实现局域网下的文件共享</h1>
+        <h1 class="article-title">jQuery事件弹出窗口，取消不跳转</h1>
     
     <div class="article-meta">
         
@@ -473,7 +473,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="站点服务器">站点服务器</a>
+                <a href="javascript:" data-rel="前端">前端</a>
             
         </span>
         
@@ -482,14 +482,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color1">ftp站点</a>
+            <a href="javascript:" class="color1">javascript</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 14:30:09'>2019-09-01 14:18</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-02 14:10:53'>2019-09-02 13:34</time>
         
     </div>
     <div class="article-meta">
@@ -511,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点"><span class="toc-text">今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、ftp站点服务器介绍"><span class="toc-text">一、ftp站点服务器介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、服务器部署方式"><span class="toc-text">二、服务器部署方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、登录ftp站点"><span class="toc-text">三、登录ftp站点</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天给大家说一下js中弹出窗口的事件"><span class="toc-text">今天给大家说一下js中弹出窗口的事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、实际情况"><span class="toc-text">一、实际情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、代码讲解"><span class="toc-text">二、代码讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript写法"><span class="toc-text">javascript写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery写法"><span class="toc-text">jQuery写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小伙伴们快去尝试吧"><span class="toc-text">小伙伴们快去尝试吧</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -526,10 +526,62 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点"><a href="#今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点" class="headerlink" title="今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点"></a>今天小小怪给大家介绍一种文件共享的方式，加入你要给学生上课，可是你要将文件发到群里面，文件又太大，学生还要自己去下载，那不是很浪费时间。在这里，我介绍一下使用ftp站点服务器创建文件共享站点</h2><h2 id="一、ftp站点服务器介绍"><a href="#一、ftp站点服务器介绍" class="headerlink" title="一、ftp站点服务器介绍"></a>一、ftp站点服务器介绍</h2><p>其实ftp站点跟网站差不多，不过ftp站点主要是在局域网下面进行操作的，对于大型的广域网就没什么作用，他主要实现的功能，主要是站点服务器下面的文件共享功能，这点相信大家在上初中和高中的时候，也深有体会，老师给你们一个ftp的地址，你们就可以从里面下载文件了，是是不是觉得很神奇呢？今天小小怪就教小伙伴们如何布置ftp站点服务器。</p>
-<h2 id="二、服务器部署方式"><a href="#二、服务器部署方式" class="headerlink" title="二、服务器部署方式"></a>二、服务器部署方式</h2><p>对于我们windows系统的电脑，首先我们要去我的电脑的管理里面打开一些服务，关于ftp和iis服务的全部打上勾，然后点击确认之后，系统会帮助我们下载这些服务。下载完毕之后，我们在搜索栏输入iis，打开iis服务，右键左边菜单中地球形状的文件，站点的名称可以自己随便取名，比如我取名叫做：test，物理路径就是你要分享的文件路径，比如：D://python，然后点击下一步，ip地址写上127.0.0.1端口是21的话就别改，ssl选项选择无ssl，下一步，身份验证匿名和基本全部勾上，允许访问选择所有用户，权限全选，之后点击完全即可。</p>
-<h2 id="三、登录ftp站点"><a href="#三、登录ftp站点" class="headerlink" title="三、登录ftp站点"></a>三、登录ftp站点</h2><p>当我们完成所有的操作步骤之后，我们还需要保证所有使用者在一个局域网下面，比如，连的是同一个无线网，或者你自己电脑可以发散无线网出去，让使用者连接这个无线网，这个时候，使用者只需要输入<code>ftp://127.0.0.1/python</code>就可以访问到你的文件夹了，点击文件可以直接下载，当然了ip不一样一定要是127.0.0.1也可以是部署者的电脑ip。</p>
-
+        <h2 id="今天给大家说一下js中弹出窗口的事件"><a href="#今天给大家说一下js中弹出窗口的事件" class="headerlink" title="今天给大家说一下js中弹出窗口的事件"></a>今天给大家说一下js中弹出窗口的事件</h2><h2 id="一、实际情况"><a href="#一、实际情况" class="headerlink" title="一、实际情况"></a>一、实际情况</h2><p>我们在浏览一些‘不良’网站的时候，单击网页跳转的时候，经常会淡出对话框，问你次网站可能存在风险，是否确定跳转，点击确定则进入到该网站，点击取消则不进入该网站，那么如果实现的呢？</p>
+<h2 id="二、代码讲解"><a href="#二、代码讲解" class="headerlink" title="二、代码讲解"></a>二、代码讲解</h2><p>加入我们在body标签里面有一个a标签，id为TZ，href属性为一个需要跳转的网址，如：</p>
+<pre><code>&lt;body&gt;
+    &lt;a href=&quot;需要跳转的网址&quot;&gt;点我跳转到目标网址&lt;/a&gt;
+&lt;/body&gt;</code></pre><p>下面给大家展示一下javascript写法和jQuery的写法。来实现这样的功能。</p>
+<h2 id="javascript写法"><a href="#javascript写法" class="headerlink" title="javascript写法"></a>javascript写法</h2><p>这段代码写在body标签里面就行了</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    document.getElementById(&quot;TZ&quot;).onclick = function(e){
+    var en = e || window.event
+    var info = window.confirm(&quot;您访问的网站存在风险，是否继续访问&quot;)
+    if (info == false){
+        en.preventDefault()
+        //或者直接写return false
+        //这个叫做关闭默认行为
+    }
+}</code></pre><p>其实用js写代码的时候，上面的代码对于只有一个js行为作用在上面的时候，影响不大，但是如果存在多个行为在这个标签上面就会出现非常严重的问题，也就是事件覆盖的现象，以此，下面，我给出规范点的写法。</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var jstz = document.getElementById(&quot;TZ&quot;)
+    jstz.addEventlistener(&quot;mousedown&quot;,funTZ,false)
+    function funTZ(e){
+    var en = e || window.event
+    var info = window.confirm(&quot;您访问的网站存在风险，是否继续访问？&quot;)
+    if (info == false){
+        return false
+    }
+}</code></pre><p>以上就是比较好的js写法，这样当添加多个事件的时候是不会出现任何覆盖的问题的，可以看到，我们给每个事件添加函数的时候，函数的名字都是不同的，所以说不同事件触发的功能也是不相同的。</p>
+<h2 id="jQuery写法"><a href="#jQuery写法" class="headerlink" title="jQuery写法"></a>jQuery写法</h2><p>使用jQuery的时候，我们必须在body标签的上面导入jQuery，其实就是在head里面导入就可以了。因为我用的编辑器是HBuilder，所以jquery可能自带的是百度的。</p>
+<pre><code>&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>另外jQuery的语法和javascript是有点区别的，一下的代码是写在body里面的。</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+    //所有的jQuery写在这个里面，当然也有简写
+})
+&lt;/script&gt;</code></pre><p>以下给出两种简写</p>
+<pre><code>//这是第一种
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $().ready(function(){
+    //所有的jQuery写在这个里面
+})
+&lt;/script&gt;
+//这是第二种
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function){
+    //所有的jQuery写在这个里面
+})</code></pre><p>但是我觉得这么点的代码还是不需要简写了吧，下面给出完整的代码。</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+        $(&quot;#TZ&quot;).bind(&quot;click&quot;,function(e){
+            var info = window.confirm(&quot;您访问的网站存在风险，是否继续访问?&quot;)
+            if (info == false){
+                return false
+                //但是既然我上面用了e，那么也给出e的写法，其实跟javascript是一模一样的。
+                //e.preventDefault()
+            }
+    })
+})
+&lt;/script&gt;</code></pre><h2 id="小伙伴们快去尝试吧"><a href="#小伙伴们快去尝试吧" class="headerlink" title="小伙伴们快去尝试吧"></a><font face="STCAIYUN">小伙伴们快去尝试吧</font></h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -542,12 +594,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>创建ftp站点实现局域网下的文件共享</p>
+    <p><span class="copy-title">文章标题:</span>jQuery事件弹出窗口，取消不跳转</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 14:18:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 14:30:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/创建ftp站点实现局域网下的文件共享/" title="创建ftp站点实现局域网下的文件共享">http://yoursite.com/2019/09/01/创建ftp站点实现局域网下的文件共享/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-02, 13:34:12</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-02, 14:10:53</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/jQuery事件弹出窗口，取消不跳转/" title="jQuery事件弹出窗口，取消不跳转">http://yoursite.com/2019/09/02/jQuery事件弹出窗口，取消不跳转/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
