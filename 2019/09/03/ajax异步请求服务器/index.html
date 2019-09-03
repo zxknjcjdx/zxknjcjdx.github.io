@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mongodb非关系数据的基本操作 | blog</title>
-  <meta name="keywords" content=" mongodb ">
-  <meta name="description" content="mongodb非关系数据的基本操作 | blog">
+  <title>ajax异步请求服务器 | blog</title>
+  <meta name="keywords" content=" 编程 , ajax ">
+  <meta name="description" content="ajax异步请求服务器 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -483,9 +483,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mongodb非关系数据的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ajax异步请求服务器" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mongodb非关系数据的基本操作</h1>
+        <h1 class="article-title">ajax异步请求服务器</h1>
     
     <div class="article-meta">
         
@@ -493,21 +493,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="前端">前端</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">mongodb</a>
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color5">ajax</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:58:47'>2019-08-31 21:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-03 14:22:55'>2019-09-03 13:36</time>
         
     </div>
     <div class="article-meta">
@@ -529,7 +531,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><span class="toc-text">非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mongodb的安装"><span class="toc-text">一、mongodb的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mongo的简单命令操作"><span class="toc-text">二、mongo的简单命令操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax的简单应用"><span class="toc-text">ajax的简单应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、ajax的相关了解"><span class="toc-text">一、ajax的相关了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、异步性解释"><span class="toc-text">二、异步性解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、代码展示"><span class="toc-text">三、代码展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、‘同源’概念解释"><span class="toc-text">四、‘同源’概念解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、ajax代码"><span class="toc-text">五、ajax代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小伙伴们快去试试吧"><span class="toc-text">小伙伴们快去试试吧</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -544,9 +546,42 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><a href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。" class="headerlink" title="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"></a>非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</h2><h2 id="一、mongodb的安装"><a href="#一、mongodb的安装" class="headerlink" title="一、mongodb的安装"></a>一、mongodb的安装</h2><p>这个还是需要大家自己去网上查找安装教程，安装配置完毕之后，win+r输入cmd进入控制台之后，输入mongo，当我们成功进入到mongo的控制台之后，说明安装和配置是没有问题的。</p>
-<h2 id="二、mongo的简单命令操作"><a href="#二、mongo的简单命令操作" class="headerlink" title="二、mongo的简单命令操作"></a>二、mongo的简单命令操作</h2><p>查看数据库命令，<code>show dbs</code>可以查看mongo的所有数据库，使用数据库命令和mysql是一样的，比如<code>use student</code>，这个时候我们会进入到student数据库下面，查看表命令，在mongo里面不是表，而是一种集合，因此命令为<code>show collections;</code>查看表中的所有数据的操作为<code>db.student.find()</code>,这个会显示出所有的数据，有的人觉得太多了，有没有像Mysql的where语句的过滤呢，当然是有的，不过在此之前，我们需要一个事情就是，在mongo中的所有数据都是以json的形式存在，也就是说键值对的形式存在的。因此查询语句需要这样写<code>db.student.find({number: {$all : [111,222]}})</code>这个语句的意思是查询number为111和222的所有记录。正常我们查询时，还会加上pretty(),这个是为了是展示出来的数据比较好看一点，如<code>db.student.find().pretty()</code>,这时展示出来的数据是json类型的，看起来比较舒服一点。</p>
-
+        <h2 id="ajax的简单应用"><a href="#ajax的简单应用" class="headerlink" title="ajax的简单应用"></a>ajax的简单应用</h2><h2 id="一、ajax的相关了解"><a href="#一、ajax的相关了解" class="headerlink" title="一、ajax的相关了解"></a>一、ajax的相关了解</h2><p>jQuery中的ajax() 方法通过 HTTP 请求加载远程数据。比如我们打开豆瓣top250的网页，当我们讲鼠标拉倒滚动条到页面最低端的时候，我们发现页面又自动加载了很多数据，这就是通过判断鼠标滑到页面底端，然后通过ajax发送http请求从服务器端拿到数据然后展示到页面上面的，ajax的好处不仅仅如何，他主要的作用还是在于他的异步性。</p>
+<h2 id="二、异步性解释"><a href="#二、异步性解释" class="headerlink" title="二、异步性解释"></a>二、异步性解释</h2><p>当我们打开一个网站，然后做一个操作的时候，我们只能等这个操作执行结束在进行其他操作的时候，这个叫做同步，而当我们进行一个操作的时候，我们还可以进行其他的事情，然后让之前的操作，自己慢慢执行结束就可以了，这个就是我们所说的异步。</p>
+<h2 id="三、代码展示"><a href="#三、代码展示" class="headerlink" title="三、代码展示"></a>三、代码展示</h2><p>首先，我们需要在head标签里面添加上jQuery。</p>
+<pre><code>&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>然后比如说我现在有一个服务器，然后服务器里面有一些文件，这个我在之前的服务器的分类里面说过，大家可以去看一下，简单来说，其实我们每次访问的是别人服务器下面的某些个文件，比如百度，访问的可能就是他服务器下面的一个主页<code>index.html</code>的页面而已。现在假设我服务器里面有很多文件夹，然后我有一个页面’index.html`，现在我需要通过ajax的请求拿到文件夹里面的数据并且展示到页面上。在这里我还要跟大家说一下‘同源’的概念。</p>
+<h2 id="四、‘同源’概念解释"><a href="#四、‘同源’概念解释" class="headerlink" title="四、‘同源’概念解释"></a>四、‘同源’概念解释</h2><p>这里我就按照我个人理解了，概念大家也不一定能理解，首先我们观察百度的网址，其中的http是一个协议，那么同源必须要http的协议一样，http和https是同源的，另外ip地址，也就是域名，比如百度的3W.baidu.com，其实这就是一个ip地址，只不过这个ip被映射到了这个域名的下面，同源的情况，这个域名也必须要相同，然后就是端口号，其实我们直接输入百度的网址到浏览器，并没有看到端口号，那么这里说明一下，服务器默认的端口号是80，也就是说你你输入3w.baidu.com:80其实也是可以登录到百度的，就是说如果不写端口号和写端口号为80，其实是同源的，端口号后面的其实就是不同的文件夹的位置问题了，说道这里大家可能也就明白一点了，想要在服务器端发送ajax请求，必须要求同源，也就是：协议，ip，端口号必须是一样的，最后提醒一下大家，http请求可不是你浏览器上面的那个地址，而是服务器端的。</p>
+<h2 id="五、ajax代码"><a href="#五、ajax代码" class="headerlink" title="五、ajax代码"></a>五、ajax代码</h2><p>比如我现在要编写服务器端的ajax请求，我想拿到服务器端的json目录下面的cdjson.json这个文件里面的内容，然后把里面的内容展示到页面上。现在加入我是服务器端，我的ip是10.0.144.144。</p>
+<pre><code>//在body里面写上如下代码：
+&lt;div id=&quot;box&quot;&gt;这个用来存放ajax请求到的数据&lt;/div&gt;
+&lt;button id=&quot;btn&quot;&gt;点击我添加ajax数据&lt;/button&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+        $(&quot;#btn&quot;).bind(&quot;click&quot;,function(){
+            $.ajax({
+                    type: &#39;get&#39;,
+//请求的方式,get或者post
+                    url:&quot;http://10.0.144.144/json/cdjson.json&quot;,
+//请求的地址
+                    data:{a:1,b:2},
+//传给服务器的数据,也可以不发给服务器任何数据
+                    datatype:&quot;json&quot;,
+//服务器返回给我们的类型
+                    success: function(data,textStatus){
+                        //其中data是服务器返回给我们的数据，textStatus是返回的状态，如果拿到了会返回success。
+                        var d = data[&#39;class&#39;][&#39;student&#39;]
+                        for (var i=0;i&lt;d.length;i++){
+                                var info = d[i]
+                                var $p = $(&#39;&lt;p&gt;&#39;+info[&#39;name&#39;]+&#39;&lt;/p&gt;&#39;)
+                                $(&#39;#box&#39;).append($p)
+                            }
+                        }
+//回调函数，用来执行需要的操作    
+                    })    
+    })
+})
+&lt;/script&gt;</code></pre><p>当然了，我们这个写的是原生的ajax，其实ajax也有很多封装好的，比如get(),post()，这个交给读者自己去查看，不过正常情况下，掌握好原生的就够用了。不懂http请求过程的小伙伴可以去我博客http标签查看。</p>
+<h1 id="小伙伴们快去试试吧"><a href="#小伙伴们快去试试吧" class="headerlink" title="小伙伴们快去试试吧"></a><font face="STCAIYUN">小伙伴们快去试试吧</font></h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -559,12 +594,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mongodb非关系数据的基本操作</p>
+    <p><span class="copy-title">文章标题:</span>ajax异步请求服务器</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:36:09</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:58:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mongodb非关系数据的基本操作/" title="mongodb非关系数据的基本操作">http://yoursite.com/2019/08/31/mongodb非关系数据的基本操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-03, 13:36:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-03, 14:22:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/ajax异步请求服务器/" title="ajax异步请求服务器">http://yoursite.com/2019/09/03/ajax异步请求服务器/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
