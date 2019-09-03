@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>使用nginx创建站点服务器 | blog</title>
-  <meta name="keywords" content=" 编程 , Nginx站点 ">
-  <meta name="description" content="使用nginx创建站点服务器 | blog">
+  <title>http请求过程 | blog</title>
+  <meta name="keywords" content=" 编程 , http ">
+  <meta name="description" content="http请求过程 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -503,9 +503,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-使用nginx创建站点服务器" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-http请求过程" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">使用nginx创建站点服务器</h1>
+        <h1 class="article-title">http请求过程</h1>
     
     <div class="article-meta">
         
@@ -513,7 +513,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="站点服务器">站点服务器</a>
+                <a href="javascript:" data-rel="网络">网络</a>
             
         </span>
         
@@ -522,14 +522,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color3">Nginx站点</a>
+            <a href="javascript:" class="color5">http</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 14:45:40'>2019-09-01 14:34</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-03 14:43:05'>2019-09-03 14:35</time>
         
     </div>
     <div class="article-meta">
@@ -551,7 +551,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。"><span class="toc-text">之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装方式"><span class="toc-text">安装方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置"><span class="toc-text">修改配置</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"><span class="toc-text">说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http请求过程"><span class="toc-text">http请求过程</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -566,13 +566,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。"><a href="#之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。" class="headerlink" title="之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。"></a>之前介绍过使用ftp的方式创建了局域网下面的站点服务器，在介绍一下广域网下面创建站点服务器的方式，也就是我们每天浏览的网站。</h2><h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><p>首先下载并安装好nginx，这里我直接给出安装包的地址<a href="http://nginx.org/download/nginx-1.9.15.zip" title="nginx安装包" target="_blank" rel="noopener">nginx安装包</a>。</p>
-<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>下载好了之后解压，然后修改conf下面的nginx.cnf文件，在server部分添加代码，比如我想访问的时候以localhost/tools去访问</p>
-<pre><code>location /tools{
-        alias   E:\Tools;   //这个是分享文件的路径
-        allow   all;
-        autoindex   on;
-}</code></pre><p>放在location=/50.html{}括号后面就可以了，这里还需要修改一下listen，默认是是80，但是系统80的端口号已经被其他的程序给占用了，如果去注册器里面修改也是可以的，但是一旦改错了，麻烦比较大，这里给出注册器的改法，win+r，输入regedit命令，在<code>hkey_local_machine/system/cuuentcontrolset/service/Http</code> 点击http 修改start为0，但是不建议这样做，我们直接将listen改成8888就可以了，这个端口号自己可以随便改，只要不被占用就可以了。然后我们使用终端进去到ngnix的安装目录下面 在ngnix.exe所在的文件目录下面 输入start ngnix.exe 即可启动ngnix访问网址为<code>http://localhost/tools</code>可访问到自己共享文件 但是有一点 好像不能访问中文的暂时还没有解决。其实这个已经算是发布到网上去了，只要我们的电脑不关，就可以通过站点来访问到我们的服务器，其中的localhost，访问者要输入创建者的电脑的ip地址，这也是我们为什么要买服务器的原因，因为买的服务器可以一直开着，所以不需要我们每次都要手动开启，基本是24小时都在运行的。</p>
+        <h2 id="说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"><a href="#说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。" class="headerlink" title="说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"></a>说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。</h2><h2 id="http请求过程"><a href="#http请求过程" class="headerlink" title="http请求过程"></a>http请求过程</h2><p>当我们登录到一个网站的时候，我们可能会点击一些东西，然后触发一些响应事件，获取到一些想要的数据，那么是一个怎么样的过程了，首先，我们触发一个事件，然后会向服务器发送一个http的请求，当服务器接收到这个请求之后，会从数据库里面拿到符合条件的数据，拿到之后会返回给浏览器，这个时候浏览器会将返回的数据进行渲染，然后以html或者xml等等其他的形式展示到页面上面去。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -586,12 +580,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>使用nginx创建站点服务器</p>
+    <p><span class="copy-title">文章标题:</span>http请求过程</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 14:34:08</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 14:45:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/使用nginx创建站点服务器/" title="使用nginx创建站点服务器">http://yoursite.com/2019/09/01/使用nginx创建站点服务器/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-03, 14:35:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-03, 14:43:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/http请求过程/" title="http请求过程">http://yoursite.com/2019/09/03/http请求过程/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
