@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>mongodb非关系数据的基本操作 | blog</title>
-  <meta name="keywords" content=" mongodb ">
-  <meta name="description" content="mongodb非关系数据的基本操作 | blog">
+  <title>mahout中的完整基于用户的推荐系统 | blog</title>
+  <meta name="keywords" content=" 编程 , mahout , maven ">
+  <meta name="description" content="mahout中的完整基于用户的推荐系统 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -511,9 +511,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-mongodb非关系数据的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mahout中的完整基于用户的推荐系统" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">mongodb非关系数据的基本操作</h1>
+        <h1 class="article-title">mahout中的完整基于用户的推荐系统</h1>
     
     <div class="article-meta">
         
@@ -521,21 +521,25 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="推荐系统">推荐系统</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">mongodb</a>
+            <a href="javascript:" class="color3">编程</a>
+            
+            <a href="javascript:" class="color2">mahout</a>
+            
+            <a href="javascript:" class="color1">maven</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 21:58:47'>2019-08-31 21:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-05 20:30:43'>2019-09-05 20:19</time>
         
     </div>
     <div class="article-meta">
@@ -557,7 +561,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><span class="toc-text">非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、mongodb的安装"><span class="toc-text">一、mongodb的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mongo的简单命令操作"><span class="toc-text">二、mongo的简单命令操作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。"><span class="toc-text">还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、工具。"><span class="toc-text">一、工具。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、代码讲解"><span class="toc-text">二、代码讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学弟学妹们，快去尝试吧"><span class="toc-text">学弟学妹们，快去尝试吧~</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -572,9 +576,89 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"><a href="#非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。" class="headerlink" title="非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。"></a>非关系数据中比较流行的还是MongoDb数据库，小小怪这里就给大家介绍一下mongodb的简单操作吧。</h2><h2 id="一、mongodb的安装"><a href="#一、mongodb的安装" class="headerlink" title="一、mongodb的安装"></a>一、mongodb的安装</h2><p>这个还是需要大家自己去网上查找安装教程，安装配置完毕之后，win+r输入cmd进入控制台之后，输入mongo，当我们成功进入到mongo的控制台之后，说明安装和配置是没有问题的。</p>
-<h2 id="二、mongo的简单命令操作"><a href="#二、mongo的简单命令操作" class="headerlink" title="二、mongo的简单命令操作"></a>二、mongo的简单命令操作</h2><p>查看数据库命令，<code>show dbs</code>可以查看mongo的所有数据库，使用数据库命令和mysql是一样的，比如<code>use student</code>，这个时候我们会进入到student数据库下面，查看表命令，在mongo里面不是表，而是一种集合，因此命令为<code>show collections;</code>查看表中的所有数据的操作为<code>db.student.find()</code>,这个会显示出所有的数据，有的人觉得太多了，有没有像Mysql的where语句的过滤呢，当然是有的，不过在此之前，我们需要一个事情就是，在mongo中的所有数据都是以json的形式存在，也就是说键值对的形式存在的。因此查询语句需要这样写<code>db.student.find({number: {$all : [111,222]}})</code>这个语句的意思是查询number为111和222的所有记录。正常我们查询时，还会加上pretty(),这个是为了是展示出来的数据比较好看一点，如<code>db.student.find().pretty()</code>,这时展示出来的数据是json类型的，看起来比较舒服一点。</p>
+        <h2 id="还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。"><a href="#还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。" class="headerlink" title="还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。"></a>还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。</h2><h2 id="一、工具。"><a href="#一、工具。" class="headerlink" title="一、工具。"></a>一、工具。</h2><p>IDE：Intellij IDEA或者eclipse<br>安装和配置:maven，mahout</p>
+<h2 id="二、代码讲解"><a href="#二、代码讲解" class="headerlink" title="二、代码讲解"></a>二、代码讲解</h2><p>由于所有的代码我都给了注释，所以这里我就直接贴代码了。首先导入如下jar包。</p>
+<pre><code>import org.apache.hadoop.metrics2.sink.ganglia.AbstractGangliaSink;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.common.Weighting;
+import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
+import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.AverageAbsoluteDifferenceRecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.*;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.Recommender;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
+import org.apache.mahout.common.RandomUtils;
+import java.io.File;</code></pre><p>然后完整的代码部分，//部分是注释掉的内容，这些内容给了代码的详细讲解。</p>
+<pre><code>public class easy_recommender_eval {
+    public static void main(String[] args) throws Exception{
+        RandomUtils.useTestSeed();
+        final DataModel model = new FileDataModel(new File(&quot;E:/mahout/u.data&quot;));
+//      System.out.println(model.getPreferenceValue(1,101));
+//        System.out.println(model.getNumUsers());
 
+//        RecommenderEvaluator evaluator = new RMSRecommenderEvaluator();
+        //上面这个用来计算RMSE
+        RecommenderEvaluator evaluator = new AverageAbsoluteDifferenceRecommenderEvaluator();
+        //上面这个用来计算MAE
+        RecommenderBuilder builder = new RecommenderBuilder() {
+            @Override
+            public Recommender buildRecommender(DataModel model) throws TasteException {
+                UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+//                similarity.setPreferenceInferrer(new AveragingPreferenceInferrer(model));
+                //这个可以实现给用户没有评分的数据直接填充平均值
+
+                /*当我们查看皮尔森的源码发现其实他还有一个参数是weight，这个是权重，这个权重在于体验用户的共同观影数，越多权值越大，
+                默认是没有权值的，即Weight.UNWEIGHT，我们可以给他加上，
+                UserSimilarity similarity = new PearsonCorrelationSimilarity(model, Weighting.WEIGHTED);
+                他预测的MAE会小一点点，另外补充一点，其实这个不仅仅是皮尔森相似度的计算公式，也是余弦相似度的计算公式。
+                因为Mahout实现中会将输入中心化，导致这两个度量标准变成一样的。
+                * */
+//                UserSimilarity similarity = new EuclideanDistanceSimilarity(model);
+                //上面这个是欧氏距离，这种算法求出来的并不是相似度，因此相似度是以计算出来的距离d，经过1/1+d得到相似度。并且其计算结果在0到1之间。另外欧式距离也可以加上权重。
+
+//                UserSimilarity similarity = new CachingUserSimilarity(new SpearmanCorrelationSimilarity(model),model);
+                /*
+                这个是斯皮尔曼计算相似度的方式，这个相似度的计算方式，首先给用户对每一个项目按评分的大小排序，比如评分最低的
+                评分值会被改成1，次低的被改成2，以此类推，然后再使用皮尔森相似度的计算方法计算相似度，这个算法实现起来的效率
+                是非常低的，因为他会先排序。这里大家可能发现，多了一个CachingUserSimilarity，他封装了Usersimliarity的实现
+                并且缓存结果，可以这么理解，比如我们已经算过了用户1和其他所有用户的相似度了，然后后面我们算用户2的时候，就不
+                需要再去计算和用户1的相似度了，因为已经被缓存了。可以提高程序的计算效率，但是会消耗内存。
+                 */
+
+//                UserSimilarity similarity = new TanimotoCoefficientSimilarity(model);
+                /*
+                这个是谷本系数，也叫做Jaccard系统，他的计算方式两个用户看过的电影的交集除以两个用户看的电影的并集。
+                 */
+
+//                UserSimilarity similarity = new LogLikelihoodSimilarity(model);
+                /*
+                这个是基于对数似然比计算相似度，相比与谷本系数，这个方面比较智能化，他旨在计算两个用户由于机缘巧合发生重叠
+                的不可能性。比如其实两个不相似的用户，巧合的评价过一些电影，但是这些重叠的电影不太可能是巧合的概率。由于比较
+                智能，这个算出来的值还是比较小的。
+                 */
+
+//                UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.5, similarity, model);
+                //上面是基于阈值的邻域
+                UserNeighborhood neighborhood = new NearestNUserNeighborhood(100, similarity, model);
+                //上面是固定大小的邻域，只前相似度最高的前10
+                return new GenericUserBasedRecommender(model, neighborhood, similarity);
+
+            }
+        };
+
+        double score = evaluator.evaluate(builder, null, model, 0.9, 1.0);
+//最后两个参数的第一个参数是选取百分之90的数据做训练，最后一个参数是选取百分之百的数据。比如说你的数据集比较大，最后一个数据你可以写0.5，也就是说取一半的数据，然后再一半的数据里面在取百分之90作为训练集。
+        System.out.println(score);
+    }
+}</code></pre><p>最后输出的score是MAE值，也就是我们说的平均绝对误差。</p>
+<h2 id="学弟学妹们，快去尝试吧"><a href="#学弟学妹们，快去尝试吧" class="headerlink" title="学弟学妹们，快去尝试吧~"></a><font face="STCAIYUN" color="blue">学弟学妹们，快去尝试吧~</font></h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -587,12 +671,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>mongodb非关系数据的基本操作</p>
+    <p><span class="copy-title">文章标题:</span>mahout中的完整基于用户的推荐系统</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-31, 21:36:09</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 21:58:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/31/mongodb非关系数据的基本操作/" title="mongodb非关系数据的基本操作">http://yoursite.com/2019/08/31/mongodb非关系数据的基本操作/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-05, 20:19:15</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-05, 20:30:43</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/05/mahout中的完整基于用户的推荐系统/" title="mahout中的完整基于用户的推荐系统">http://yoursite.com/2019/09/05/mahout中的完整基于用户的推荐系统/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
