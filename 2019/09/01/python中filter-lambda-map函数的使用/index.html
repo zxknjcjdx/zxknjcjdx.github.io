@@ -6,17 +6,18 @@
   <meta name="keywords" content=" 编程 , python ">
   <meta name="description" content="python中filter,lambda,map函数的使用 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。一、工具。IDE：Intellij IDEA或者eclipse安装和配置:maven，mahout 二、代码讲解由于所有的代码我都给了注释，所以这里我就直接贴代码了。首先导入如下jar包。 import org.apache.hadoop.metrics2.sink.ganglia.AbstractGa">
+<meta name="keywords" content="编程,maven,mahout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mahout中的完整基于用户的推荐系统">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/mahout中的完整基于用户的推荐系统/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
+<meta property="og:description" content="还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。一、工具。IDE：Intellij IDEA或者eclipse安装和配置:maven，mahout 二、代码讲解由于所有的代码我都给了注释，所以这里我就直接贴代码了。首先导入如下jar包。 import org.apache.hadoop.metrics2.sink.ganglia.AbstractGa">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-01T11:56:25.537Z">
+<meta property="og:updated_time" content="2019-09-05T12:30:43.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
+<meta name="twitter:title" content="mahout中的完整基于用户的推荐系统">
+<meta name="twitter:description" content="还是为学弟学妹们服务，mahout做推荐系统，今天讲解mahout比较完备的基于用户的推荐系统。一、工具。IDE：Intellij IDEA或者eclipse安装和配置:maven，mahout 二、代码讲解由于所有的代码我都给了注释，所以这里我就直接贴代码了。首先导入如下jar包。 import org.apache.hadoop.metrics2.sink.ganglia.AbstractGa">
 
 
 <link rel="icon" href="/img/touxiang.JPG">
@@ -123,14 +124,6 @@
     
         
             
-            <li><div data-rel="前端">前端<small>(5)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="网络">网络<small>(1)</small></div>
                 
             </li>
@@ -139,7 +132,7 @@
     
         
             
-            <li><div data-rel="推荐系统">推荐系统<small>(2)</small></div>
+            <li><div data-rel="前端">前端<small>(5)</small></div>
                 
             </li>
             
@@ -156,6 +149,14 @@
         
             
             <li><div data-rel="数据库">数据库<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="推荐系统">推荐系统<small>(2)</small></div>
                 
             </li>
             
@@ -234,10 +235,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">ajax</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">http</a>
     </li>
     
@@ -246,7 +243,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">mahout</a>
+        <a href="javascript:" class="color5">ajax</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -258,6 +255,10 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">mahout</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color1">mysql</a>
     </li>
     
@@ -266,7 +267,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">正则表达式</a>
+        <a href="javascript:" class="color4">多线程</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -274,11 +275,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">Nginx站点</a>
+        <a href="javascript:" class="color1">正则表达式</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">request爬虫</a>
+        <a href="javascript:" class="color3">Nginx站点</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -286,11 +287,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">html</a>
+        <a href="javascript:" class="color5">request爬虫</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">多线程</a>
+        <a href="javascript:" class="color5">html</a>
     </li>
     
     <div class="clearfix"></div>
@@ -298,14 +299,6 @@
 
     
     <nav id="title-list-nav">
-        
-        <a  class="前端 "
-           href="/2019/09/03/ajax异步请求服务器/"
-           data-tag="编程,ajax"
-           data-author="" >
-            <span class="post-title" title="ajax异步请求服务器">ajax异步请求服务器</span>
-            <span class="post-date" title="2019-09-03 13:36:06">2019/09/03</span>
-        </a>
         
         <a  class="网络 "
            href="/2019/09/03/http请求过程/"
@@ -324,19 +317,19 @@
         </a>
         
         <a  class="前端 "
-           href="/2019/09/02/jQuery事件弹出窗口，取消不跳转/"
-           data-tag="编程,javascript"
+           href="/2019/09/03/ajax异步请求服务器/"
+           data-tag="编程,ajax"
            data-author="" >
-            <span class="post-title" title="jQuery事件弹出窗口，取消不跳转">jQuery事件弹出窗口，取消不跳转</span>
-            <span class="post-date" title="2019-09-02 13:34:12">2019/09/02</span>
+            <span class="post-title" title="ajax异步请求服务器">ajax异步请求服务器</span>
+            <span class="post-date" title="2019-09-03 13:36:06">2019/09/03</span>
         </a>
         
-        <a  class="推荐系统 "
-           href="/2019/09/05/mahout中的完整基于用户的推荐系统/"
-           data-tag="编程,mahout,maven"
+        <a  class="前端 "
+           href="/2019/09/01/javascript详解，提供原生js轮轮播/"
+           data-tag="编程,javascript"
            data-author="" >
-            <span class="post-title" title="mahout中的完整基于用户的推荐系统">mahout中的完整基于用户的推荐系统</span>
-            <span class="post-date" title="2019-09-05 20:19:15">2019/09/05</span>
+            <span class="post-title" title="javascript详解，提供原生js轮轮播">javascript详解，提供原生js轮轮播</span>
+            <span class="post-date" title="2019-09-01 16:22:28">2019/09/01</span>
         </a>
         
         <a  class="maven "
@@ -355,12 +348,12 @@
             <span class="post-date" title="2019-08-31 21:36:09">2019/08/31</span>
         </a>
         
-        <a  class="前端 "
-           href="/2019/09/01/javascript详解，提供原生js轮轮播/"
-           data-tag="编程,javascript"
+        <a  class="推荐系统 "
+           href="/2019/09/05/mahout中的完整基于用户的推荐系统/"
+           data-tag="编程,maven,mahout"
            data-author="" >
-            <span class="post-title" title="javascript详解，提供原生js轮轮播">javascript详解，提供原生js轮轮播</span>
-            <span class="post-date" title="2019-09-01 16:22:28">2019/09/01</span>
+            <span class="post-title" title="mahout中的完整基于用户的推荐系统">mahout中的完整基于用户的推荐系统</span>
+            <span class="post-date" title="2019-09-05 20:19:15">2019/09/05</span>
         </a>
         
         <a  class="数据库 "
@@ -387,28 +380,20 @@
             <span class="post-date" title="2019-08-31 21:33:08">2019/08/31</span>
         </a>
         
-        <a  class="python "
-           href="/2019/09/01/python中filter-lambda-map函数的使用/"
-           data-tag="编程,python"
-           data-author="" >
-            <span class="post-title" title="python中filter,lambda,map函数的使用">python中filter,lambda,map函数的使用</span>
-            <span class="post-date" title="2019-09-01 17:25:24">2019/09/01</span>
-        </a>
-        
-        <a  class="数据库 "
-           href="/2019/09/01/python中对mysql数据库的操作/"
-           data-tag="编程,mysql,python"
-           data-author="" >
-            <span class="post-title" title="python中对mysql数据库的操作">python中对mysql数据库的操作</span>
-            <span class="post-date" title="2019-09-01 00:09:46">2019/09/01</span>
-        </a>
-        
         <a  class="数据库 "
            href="/2019/09/02/python中对mongo数据库的连接与操作/"
            data-tag="编程,mongodb,python"
            data-author="" >
             <span class="post-title" title="python中对mongo数据库的连接与操作">python中对mongo数据库的连接与操作</span>
             <span class="post-date" title="2019-09-02 09:15:51">2019/09/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/09/01/python中filter-lambda-map函数的使用/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python中filter,lambda,map函数的使用">python中filter,lambda,map函数的使用</span>
+            <span class="post-date" title="2019-09-01 17:25:24">2019/09/01</span>
         </a>
         
         <a  class="python "
@@ -420,19 +405,19 @@
         </a>
         
         <a  class="python "
-           href="/2019/08/31/python库matlabplot绘图详解/"
-           data-tag="编程,python"
+           href="/2019/09/01/python中多线程的用法/"
+           data-tag="编程,python,多线程"
            data-author="" >
-            <span class="post-title" title="python库matlabplot绘图详解">python库matlabplot绘图详解</span>
-            <span class="post-date" title="2019-08-31 14:31:27">2019/08/31</span>
+            <span class="post-title" title="python中多线程的用法">python中多线程的用法</span>
+            <span class="post-date" title="2019-09-01 16:56:28">2019/09/01</span>
         </a>
         
-        <a  class="爬虫 "
-           href="/2019/09/01/python爬虫正则表达式的用法/"
-           data-tag="编程,python,正则表达式"
+        <a  class="前端 "
+           href="/2019/09/02/jQuery事件弹出窗口，取消不跳转/"
+           data-tag="编程,javascript"
            data-author="" >
-            <span class="post-title" title="python爬虫正则表达式的用法">python爬虫正则表达式的用法</span>
-            <span class="post-date" title="2019-09-01 17:31:39">2019/09/01</span>
+            <span class="post-title" title="jQuery事件弹出窗口，取消不跳转">jQuery事件弹出窗口，取消不跳转</span>
+            <span class="post-date" title="2019-09-02 13:34:12">2019/09/02</span>
         </a>
         
         <a  class="爬虫 "
@@ -441,6 +426,14 @@
            data-author="" >
             <span class="post-title" title="python爬虫选择器的使用">python爬虫选择器的使用</span>
             <span class="post-date" title="2019-09-01 19:32:00">2019/09/01</span>
+        </a>
+        
+        <a  class="爬虫 "
+           href="/2019/09/01/python爬虫正则表达式的用法/"
+           data-tag="编程,python,正则表达式"
+           data-author="" >
+            <span class="post-title" title="python爬虫正则表达式的用法">python爬虫正则表达式的用法</span>
+            <span class="post-date" title="2019-09-01 17:31:39">2019/09/01</span>
         </a>
         
         <a  class="python "
@@ -459,12 +452,28 @@
             <span class="post-date" title="2019-09-01 14:34:08">2019/09/01</span>
         </a>
         
-        <a  class="爬虫 "
-           href="/2019/09/01/使用request实现简单的网页爬虫/"
-           data-tag="编程,python,request爬虫"
+        <a  class="数据库 "
+           href="/2019/09/01/python中对mysql数据库的操作/"
+           data-tag="编程,mysql,python"
            data-author="" >
-            <span class="post-title" title="使用request实现简单的网页爬虫">使用request实现简单的网页爬虫</span>
-            <span class="post-date" title="2019-09-01 19:07:42">2019/09/01</span>
+            <span class="post-title" title="python中对mysql数据库的操作">python中对mysql数据库的操作</span>
+            <span class="post-date" title="2019-09-01 00:09:46">2019/09/01</span>
+        </a>
+        
+        <a  class="推荐系统 "
+           href="/2019/09/01/使用hadoop生态圈mahout做推荐系统/"
+           data-tag="编程,maven,mahout"
+           data-author="" >
+            <span class="post-title" title="使用hadoop生态圈mahout做推荐系统">使用hadoop生态圈mahout做推荐系统</span>
+            <span class="post-date" title="2019-09-01 15:22:11">2019/09/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/31/python库matlabplot绘图详解/"
+           data-tag="编程,python"
+           data-author="" >
+            <span class="post-title" title="python库matlabplot绘图详解">python库matlabplot绘图详解</span>
+            <span class="post-date" title="2019-08-31 14:31:27">2019/08/31</span>
         </a>
         
         <a  class="站点服务器 "
@@ -475,28 +484,20 @@
             <span class="post-date" title="2019-09-01 14:18:29">2019/09/01</span>
         </a>
         
+        <a  class="爬虫 "
+           href="/2019/09/01/使用request实现简单的网页爬虫/"
+           data-tag="编程,python,request爬虫"
+           data-author="" >
+            <span class="post-title" title="使用request实现简单的网页爬虫">使用request实现简单的网页爬虫</span>
+            <span class="post-date" title="2019-09-01 19:07:42">2019/09/01</span>
+        </a>
+        
         <a  class="前端 "
            href="/2019/08/31/前端html学习方法/"
            data-tag="编程,html"
            data-author="" >
             <span class="post-title" title="前端html学习方法">前端html学习方法</span>
             <span class="post-date" title="2019-08-31 17:37:00">2019/08/31</span>
-        </a>
-        
-        <a  class="python "
-           href="/2019/09/01/python中多线程的用法/"
-           data-tag="编程,python,多线程"
-           data-author="" >
-            <span class="post-title" title="python中多线程的用法">python中多线程的用法</span>
-            <span class="post-date" title="2019-09-01 16:56:28">2019/09/01</span>
-        </a>
-        
-        <a  class="推荐系统 "
-           href="/2019/09/01/使用hadoop生态圈mahout做推荐系统/"
-           data-tag="编程,mahout,maven"
-           data-author="" >
-            <span class="post-title" title="使用hadoop生态圈mahout做推荐系统">使用hadoop生态圈mahout做推荐系统</span>
-            <span class="post-date" title="2019-09-01 15:22:11">2019/09/01</span>
         </a>
         
     </nav>
@@ -667,7 +668,7 @@ print(c)</code></pre><p>得到的结果为[4,4,4]</p>
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#编程','#ajax','#http','#javascript','#mahout','#maven','#mongodb','#mysql','#python','#正则表达式','#爬虫选择器','#Nginx站点','#request爬虫','#ftp站点','#html','#多线程',],
+            'data': ['#编程','#http','#javascript','#ajax','#maven','#mongodb','#mahout','#mysql','#python','#多线程','#爬虫选择器','#正则表达式','#Nginx站点','#ftp站点','#request爬虫','#html',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
