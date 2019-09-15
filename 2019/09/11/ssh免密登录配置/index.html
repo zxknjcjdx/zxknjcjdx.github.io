@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>python中多线程的用法 | blog</title>
-  <meta name="keywords" content=" 编程 , 多线程 , python ">
-  <meta name="description" content="python中多线程的用法 | blog">
+  <title>ssh免密登录配置 | blog</title>
+  <meta name="keywords" content=" 编程 , hadoop ">
+  <meta name="description" content="ssh免密登录配置 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -555,9 +555,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python中多线程的用法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ssh免密登录配置" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python中多线程的用法</h1>
+        <h1 class="article-title">ssh免密登录配置</h1>
     
     <div class="article-meta">
         
@@ -565,7 +565,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="python">python</a>
+                <a href="javascript:" data-rel="大数据">大数据</a>
             
         </span>
         
@@ -574,16 +574,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color4">多线程</a>
-            
-            <a href="javascript:" class="color2">python</a>
+            <a href="javascript:" class="color2">hadoop</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 17:09:28'>2019-09-01 16:56</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-11 14:36:35'>2019-09-11 14:11</time>
         
     </div>
     <div class="article-meta">
@@ -605,7 +603,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><span class="toc-text">小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、准备工作"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、引入多线程"><span class="toc-text">二、引入多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、多线程总结"><span class="toc-text">三、多线程总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh免密登录配置"><span class="toc-text">ssh免密登录配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、前期准备"><span class="toc-text">一、前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、具体步骤"><span class="toc-text">二、具体步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、给ip地址添加映射"><span class="toc-text">三、给ip地址添加映射</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -620,27 +618,25 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><a href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。" class="headerlink" title="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"></a>小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</h2><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>我们需要导入库文件<code>import threading</code>,准备好我们需要执行循环的函数，比如：</p>
-<pre><code>run(a,b):
-    print(a)
-    print(b)
-#这个a我们要求是1到10000000次循环</code></pre><p>当然了实际情况并不是我这种简单的函数。</p>
-<h2 id="二、引入多线程"><a href="#二、引入多线程" class="headerlink" title="二、引入多线程"></a>二、引入多线程</h2><p>其实多线程换句话说：就是一种分布式，程序同时执行，互不影响，每一个线程之处理自己的部分。现在我要开4个线程去执行上面那个函数，代码：</p>
-<pre><code>t1 = threading.Thread(target=run, args=(1,25000000))
-t2 = threading.Thread(target=run, args=(25000000,50000000))
-t3 = threading.Thread(target=run, args=(50000000,75000000))
-t4 = threading.Thread(target=run, args=(25000000,10000000))
-#其中的target是我们需要执行的函数，args是传入的参数，需要注意一点，args必须是一个元祖，加入只有一个参数，就这样传入`args=(2,)`
-t1.start()
-t2.start()
-t3.start()
-t4.start()
-#启动所有线程
-#如果下面还有其他操作，加上如下代码
-t1.join()
-t2.join()
-t3.join()
-t4.join()</code></pre><h2 id="三、多线程总结"><a href="#三、多线程总结" class="headerlink" title="三、多线程总结"></a>三、多线程总结</h2><p>大家不要觉得多线程原来就这样用而已，我们日常看到的服务器的多用户登录什么的，都是用的多线程去处理的，下一次，我将给大家用python的多线程写一个完整的服务器代码</p>
+        <h2 id="ssh免密登录配置"><a href="#ssh免密登录配置" class="headerlink" title="ssh免密登录配置"></a>ssh免密登录配置</h2><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><p>这个是建立在已经有了节点机器，和master机器的情况下，为了我们对分布式的操作能够更加方便，我们需要对所有的机器之间进行ssh的免密认证。首先，准备好，节点机器和master机器，比如其中一台节点机器的ip为130.12.13.1。这里只给出一台节点机的连接操作。</p>
+<h2 id="二、具体步骤"><a href="#二、具体步骤" class="headerlink" title="二、具体步骤"></a>二、具体步骤</h2><p>首先我们到master机器上面，输入</p>
+<pre><code>ssh-keygen</code></pre><p>这个操作是给我们的机器生成密钥，注意：ssh和-之间没有空格，接着输入</p>
+<pre><code>ssh-copy-id 130.12.13.1</code></pre><p>可以把我们之前生成的密钥拷贝到这个ip地址的机器上面去，这样相当于给了这个机器一个进入到master机的权限。现在我们输入ssh 130.12.13.1就可以免密登入到我们的节点机器上面去了。</p>
+<h2 id="三、给ip地址添加映射"><a href="#三、给ip地址添加映射" class="headerlink" title="三、给ip地址添加映射"></a>三、给ip地址添加映射</h2><p>找到hosts文件，并且用vim命令打开，正常在节点机器的/etc/hosts文件下面，使用命令</p>
+<pre><code>vim /etc/hosts</code></pre><p>可以打开hosts文件，按一下键盘上面的i键，进入到编辑状态，在最后添加一行</p>
+<pre><code>130.12.12.1        slave1</code></pre><p>这个是把ip地址映射到slave1上面去，就比如我们使用cmd控制台去ping一下百度的网址，接受到的信息是这样的：</p>
+<pre><code>C:\Users\19908&gt;ping www.baidu.com
+
+正在 Ping www.a.shifen.com [180.101.49.11] 具有 32 字节的数据:
+来自 180.101.49.11 的回复: 字节=32 时间=3ms TTL=55
+来自 180.101.49.11 的回复: 字节=32 时间=4ms TTL=55
+来自 180.101.49.11 的回复: 字节=32 时间=4ms TTL=55
+来自 180.101.49.11 的回复: 字节=32 时间=3ms TTL=55
+
+180.101.49.11 的 Ping 统计信息:
+    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
+往返行程的估计时间(以毫秒为单位):
+    最短 = 3ms，最长 = 4ms，平均 = 3ms</code></pre><p>这里的ip地址其实就是百度的ip地址，而那个网址是百度将ip地址映射过去的。接着上面的，添加完之后，我们按下esc键，然后shift加上冒号，加上wq，w代表保存，q代表退出。完成这些所有步骤之后，使用ssh slave1就可以免密登录到我们的节点机器上面去了。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -654,12 +650,12 @@ t4.join()</code></pre><h2 id="三、多线程总结"><a href="#三、多线程�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>python中多线程的用法</p>
+    <p><span class="copy-title">文章标题:</span>ssh免密登录配置</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 16:56:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 17:09:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中多线程的用法/" title="python中多线程的用法">http://yoursite.com/2019/09/01/python中多线程的用法/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-11, 14:11:36</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-11, 14:36:35</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/11/ssh免密登录配置/" title="ssh免密登录配置">http://yoursite.com/2019/09/11/ssh免密登录配置/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>python中多线程的用法 | blog</title>
-  <meta name="keywords" content=" 编程 , 多线程 , python ">
-  <meta name="description" content="python中多线程的用法 | blog">
+  <title>解决windows无法连接到sens | blog</title>
+  <meta name="keywords" content=" 编程 , 安全模式 , 无法登录 ">
+  <meta name="description" content="解决windows无法连接到sens | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -555,9 +555,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-python中多线程的用法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-解决windows无法连接到sens" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python中多线程的用法</h1>
+        <h1 class="article-title">解决windows无法连接到sens</h1>
     
     <div class="article-meta">
         
@@ -565,7 +565,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="python">python</a>
+                <a href="javascript:" data-rel="win10故障">win10故障</a>
             
         </span>
         
@@ -574,16 +574,16 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color4">多线程</a>
+            <a href="javascript:" class="color5">安全模式</a>
             
-            <a href="javascript:" class="color2">python</a>
+            <a href="javascript:" class="color5">无法登录</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 17:09:28'>2019-09-01 16:56</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-15 14:45:48'>2019-09-15 14:07</time>
         
     </div>
     <div class="article-meta">
@@ -605,7 +605,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><span class="toc-text">小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、准备工作"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、引入多线程"><span class="toc-text">二、引入多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、多线程总结"><span class="toc-text">三、多线程总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在用win10系统的时候，有的时候会经常遇到的一个问题"><span class="toc-text">在用win10系统的时候，有的时候会经常遇到的一个问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows无法连接到sens，导致标准用户无法登录"><span class="toc-text">windows无法连接到sens，导致标准用户无法登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进入安全模式"><span class="toc-text">进入安全模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#老版的进入方式"><span class="toc-text">老版的进入方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新版本的进入方式（同样适合老版本）"><span class="toc-text">新版本的进入方式（同样适合老版本）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法-1"><span class="toc-text">解决办法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -620,27 +620,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"><a href="#小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。" class="headerlink" title="小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。"></a>小小怪给大家介绍一下多线程，小伙伴们发现我们运行循环程序的时候速度有点慢，怎么办呢，除了在优化算法方面，多线程也是可以帮上忙的。</h2><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>我们需要导入库文件<code>import threading</code>,准备好我们需要执行循环的函数，比如：</p>
-<pre><code>run(a,b):
-    print(a)
-    print(b)
-#这个a我们要求是1到10000000次循环</code></pre><p>当然了实际情况并不是我这种简单的函数。</p>
-<h2 id="二、引入多线程"><a href="#二、引入多线程" class="headerlink" title="二、引入多线程"></a>二、引入多线程</h2><p>其实多线程换句话说：就是一种分布式，程序同时执行，互不影响，每一个线程之处理自己的部分。现在我要开4个线程去执行上面那个函数，代码：</p>
-<pre><code>t1 = threading.Thread(target=run, args=(1,25000000))
-t2 = threading.Thread(target=run, args=(25000000,50000000))
-t3 = threading.Thread(target=run, args=(50000000,75000000))
-t4 = threading.Thread(target=run, args=(25000000,10000000))
-#其中的target是我们需要执行的函数，args是传入的参数，需要注意一点，args必须是一个元祖，加入只有一个参数，就这样传入`args=(2,)`
-t1.start()
-t2.start()
-t3.start()
-t4.start()
-#启动所有线程
-#如果下面还有其他操作，加上如下代码
-t1.join()
-t2.join()
-t3.join()
-t4.join()</code></pre><h2 id="三、多线程总结"><a href="#三、多线程总结" class="headerlink" title="三、多线程总结"></a>三、多线程总结</h2><p>大家不要觉得多线程原来就这样用而已，我们日常看到的服务器的多用户登录什么的，都是用的多线程去处理的，下一次，我将给大家用python的多线程写一个完整的服务器代码</p>
+        <h2 id="在用win10系统的时候，有的时候会经常遇到的一个问题"><a href="#在用win10系统的时候，有的时候会经常遇到的一个问题" class="headerlink" title="在用win10系统的时候，有的时候会经常遇到的一个问题"></a>在用win10系统的时候，有的时候会经常遇到的一个问题</h2><h2 id="windows无法连接到sens，导致标准用户无法登录"><a href="#windows无法连接到sens，导致标准用户无法登录" class="headerlink" title="windows无法连接到sens，导致标准用户无法登录"></a>windows无法连接到sens，导致标准用户无法登录</h2><p>首先说一下由于是哪些原因造成的，第一可能是你在使用某个软件的时候，你为了方便强制关机，导致的问题，第二可能是某些软件的不兼容问题，但是不管是什么样引起的问题，或多或少，都让我们很绝望，因为正常出现这个问题的时候，我们电脑的所有环境都是崩溃的。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h2 id="进入安全模式"><a href="#进入安全模式" class="headerlink" title="进入安全模式"></a>进入安全模式</h2><p>对于新版的win10系统，进入安全模式，可能和老版的不太一样，首先说一下新版和老版的进入方式。</p>
+<h2 id="老版的进入方式"><a href="#老版的进入方式" class="headerlink" title="老版的进入方式"></a>老版的进入方式</h2><p>正常是在开机的时候一直按F8，电脑不同，可能按键也是不同的，然后进入到疑难杂症那种选择界面，这个时候鼠标是用不了的，我们只能用键盘，操作键盘，我们选择疑难杂症，继续选择高级选项，然后就会看到开机启动的选项，找到之后就直接点击它，然后他会出现很多种启动方式，记住这个时候选择安全模式不是按键盘上面的456，而是F4,F5,F6，等等，不过我们正常只需要进入到安全模式就可以了。</p>
+<h2 id="新版本的进入方式（同样适合老版本）"><a href="#新版本的进入方式（同样适合老版本）" class="headerlink" title="新版本的进入方式（同样适合老版本）"></a>新版本的进入方式（同样适合老版本）</h2><p>我们就正常进入到出现问题的系统下面，然后我们使用win+R，输入msconfig，之后选择引导，在引导选项当中把安全引导勾上，其他的都不要乱动，然后点击确定。这个时候，我们重新启动计算机，就能够进入到安全模式。</p>
+<h2 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h2><p>我们出现这种问题的时候，开机首先会在右下角跳出来，windows无法连接到sens，导致标准用户无法登录，等等一些话，然后过一会儿又会在屏幕的正中间跳出来一个错误，说是应用软件没有关闭，然后点击继续就干嘛干嘛，点击取消就干嘛干嘛，这个时候很多人会觉得是这个原因引起的电脑系统奔溃，然后就上网去查找这种错误的解决办法，最后都没有得到解决，而最后给出的办法就是重装系统，可是一旦重装系统的话，我们C盘里面的东西就必须要全部清空，这对于一些做项目的人是非常可怕的，要知道C盘里面存的不仅仅是环境的问题， 更存在着很多的数据。其实这个真正的原因还是一开始在右下角跳出来的错误，首先我们按照如上的步骤进入到安全模式，然后使用win+R输入cmd，在终端里面输入</p>
+<pre><code>netsh winsock reset catalog</code></pre><p>这个时候别着急重新启动计算机，当然如果是使用的老版的进入方式，这个时候重启没事，但是如果使用新版的进入安全模式的方式，我们需要在设置引导的地方重新设置一下，这里我们点击常规，然后选择正常启动。这个时候重新启动计算机，就可以解决win10系统带来的bug，让人崩溃的bug，正常人遇到了最后找错了bug所在，最终不得已还是重装了系统。这里给大家提供这个方法，希望对大家有帮助。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -654,12 +639,12 @@ t4.join()</code></pre><h2 id="三、多线程总结"><a href="#三、多线程�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>python中多线程的用法</p>
+    <p><span class="copy-title">文章标题:</span>解决windows无法连接到sens</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 16:56:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 17:09:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/python中多线程的用法/" title="python中多线程的用法">http://yoursite.com/2019/09/01/python中多线程的用法/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-15, 14:07:59</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-15, 14:45:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/15/解决windows无法连接到sens/" title="解决windows无法连接到sens">http://yoursite.com/2019/09/15/解决windows无法连接到sens/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
