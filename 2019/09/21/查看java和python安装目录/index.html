@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>使用hadoop生态圈mahout做推荐系统 | blog</title>
-  <meta name="keywords" content=" 编程 , mahout , maven ">
-  <meta name="description" content="使用hadoop生态圈mahout做推荐系统 | blog">
+  <title>查看java和python安装目录 | blog</title>
+  <meta name="keywords" content=" 编程 , python , java ">
+  <meta name="description" content="查看java和python安装目录 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -567,9 +567,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-使用hadoop生态圈mahout做推荐系统" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-查看java和python安装目录" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">使用hadoop生态圈mahout做推荐系统</h1>
+        <h1 class="article-title">查看java和python安装目录</h1>
     
     <div class="article-meta">
         
@@ -577,7 +577,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="推荐系统">推荐系统</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
@@ -586,16 +586,16 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color2">mahout</a>
+            <a href="javascript:" class="color2">python</a>
             
-            <a href="javascript:" class="color1">maven</a>
+            <a href="javascript:" class="color5">java</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-01 16:01:14'>2019-09-01 15:22</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-21 16:41:37'>2019-09-21 16:35</time>
         
     </div>
     <div class="article-meta">
@@ -617,7 +617,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。"><span class="toc-text">之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、hadoop介绍"><span class="toc-text">一、hadoop介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、mahout介绍"><span class="toc-text">二、mahout介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、mahout做推荐系统"><span class="toc-text">三、mahout做推荐系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具准备"><span class="toc-text">工具准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装maven"><span class="toc-text">安装maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码编写"><span class="toc-text">代码编写</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不同系统下，查看Java和python的安装目录"><span class="toc-text">不同系统下，查看Java和python的安装目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC系统下："><span class="toc-text">MAC系统下：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows系统下："><span class="toc-text">windows系统下：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另外，python可以通过命令"><span class="toc-text">另外，python可以通过命令</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -632,122 +632,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。"><a href="#之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。" class="headerlink" title="之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。"></a>之所以做这个方面的介绍，是为了给我的师弟师妹们铺路。使用分布式做推荐系统学习。</h2><h2 id="一、hadoop介绍"><a href="#一、hadoop介绍" class="headerlink" title="一、hadoop介绍"></a>一、hadoop介绍</h2><p>我就不去网上复制粘贴了，给出我个人的理解，其实就是分布式，在说什么是分布式之前，要说一下hadoop里面几个重要组成，HDFS，这个是hadoop的文件存储系统，就是我们传入的数据集什么的，什么放在这个上面，他其实是一个网站，YARN框架，这个其实是从Mapreduce中分离出来的，叫做资源管理调度系统，这个什么作用我暂时还没有用到，最后一个自然就是Mapreduce了，分布式运算框架。</p>
-<h2 id="二、mahout介绍"><a href="#二、mahout介绍" class="headerlink" title="二、mahout介绍"></a>二、mahout介绍</h2><p>mahout是hadoop里面的一个专门用来做推荐系统，聚类算法，分类算法的一个分布式框架，由于底层用的是hadoop，因此处理数据的速度是非常之快的，mahout也是hadoop生态圈里面的重要组成成员，其实hadoop也是个非常好玩的命令，它的图标是一个大象，而他的生态圈里面的命令也很好玩，比如hive分布式数据库(蜜蜂)，pig轻量级数据集(猪),zookeeper(动物园长)，其他自己百度看看，可以了解一下。</p>
-<h2 id="三、mahout做推荐系统"><a href="#三、mahout做推荐系统" class="headerlink" title="三、mahout做推荐系统"></a>三、mahout做推荐系统</h2><h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><p>可以编写java语言的IDE，比如eclipse,myeclipse,intellij IDEA这三个，其他的不推荐，至于小伙伴问，为什么我做python的，要下载java的IDE，其实是因为，这个mahout是基于java的，只能用java去做，当然了，也不是没有python的，python的分布式是spark，但是spark好像并没有提供mahout这种专门的内置函数去做推荐系统，而是所有算法都需要自己去编写，另外spark的分布式了解周期也挺长的，对于代码基础比较差的同学，最好还是不要太花时间在这个上面。相比而言，mahout并不需要集群等的支持。</p>
-<h2 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h2><p>这里推荐小伙伴们必须安装上maven，有的小伙伴们会问，为什么要用maven，直接导包就行了啊，那你要知道一个问题，mahout是非常大的，话说一次你导包，那么每次你都去网上下载相关的jar包么，时间浪费不起啊，因此小伙伴们必须装上maven，不会安装的小伙伴可以看我博客的maven那一块的分类，有专门介绍</p>
-<h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><p>首先，我们打开IDE，点击左上角的file文件新建project，找到maven点开，找到<code>maven project</code>然后下一步，后面的名字随便你自己取名。这里我们直接新建maven项目，建完项目之后，发现项目里面比正常的java项目多了一个pom.xml，这个是依赖包的配置，因为我们需要用mahout，那么就将mahout的相关配置导入进来，不会的小伙伴看我博客的maven介绍，这里我直接贴出配置代码：</p>
-<pre><code>&lt;dependencies&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;junit&lt;/groupId&gt;
-      &lt;artifactId&gt;junit&lt;/artifactId&gt;
-      &lt;version&gt;4.11&lt;/version&gt;
-      &lt;scope&gt;test&lt;/scope&gt;
-    &lt;/dependency&gt;
-
-    &lt;!-- https://mvnrepository.com/artifact/org.apache.mahout/mahout-core --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.apache.mahout&lt;/groupId&gt;
-        &lt;artifactId&gt;mahout-core&lt;/artifactId&gt;
-        &lt;version&gt;0.9&lt;/version&gt;
-    &lt;/dependency&gt;
-  &lt;/dependencies&gt;</code></pre><p>到这里位置所有配置全部结束，现在开始我们正式的代码编写：<br>在我们新建的项目里面，新建.java的文件，然后把这些包导入进去：</p>
-<pre><code>import java.io.File;
-import java.io.IOException;
-import java.util.PrimitiveIterator;
-
-import org.apache.mahout.cf.taste.common.TasteException;
-import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
-import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
-import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
-import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
-import org.apache.mahout.cf.taste.impl.recommender.svd.ALSWRFactorizer;
-import org.apache.mahout.cf.taste.impl.recommender.svd.SVDPlusPlusFactorizer;
-import org.apache.mahout.cf.taste.impl.recommender.svd.SVDRecommender;
-import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
-import org.apache.mahout.cf.taste.impl.similarity.SpearmanCorrelationSimilarity;
-import org.apache.mahout.cf.taste.model.DataModel;
-import org.apache.mahout.cf.taste.model.Preference;
-import org.apache.mahout.cf.taste.model.PreferenceArray;
-import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
-import org.apache.mahout.cf.taste.recommender.RecommendedItem;
-import org.apache.mahout.cf.taste.recommender.Recommender;
-import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
-import org.apache.mahout.cf.taste.similarity.UserSimilarity;</code></pre><p>这个是我们需要用到的依赖包，有的包是用不到的，但是我当时为了看看其他算法的时候，直接导入进去了。接着编写如下代码：</p>
-<pre><code>public class userBase 
-{
-    public static void main( String[] args ) throws Exception
-//这里要抛异常
-    {
-        long starTime = System.currentTimeMillis();
-//这个是我用来计算程序运行时间的，存储开始时间
-        try {
-            DataModel model = new FileDataModel(new File(&quot;D:\\pythonsubject\\venv\\Recommend\\ml-100k\\base\\u1.base&quot;));
-//获取数据集，其中后面的路径是我们的数据集，他会帮我们把数据集转换成他需要使用的格式
-            DataModel model_test = new FileDataModel(new File(&quot;D:\\pythonsubject\\venv\\Recommend\\ml-100k\\test\\u1.test&quot;));
-//这个是用来做测试的数据集
-
-//            UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
-            UserSimilarity similarity = new SpearmanCorrelationSimilarity(model);
-//计算相似度的接口，这里使用的是SpearmanCorrelationSimilarity，皮尔森相似度计算，另外还有曼哈顿相似度，余弦相似度，改进余弦相似度等等，接口不一样，这个需要大家去mahout的官方api去查看
-
-            UserNeighborhood neighborhood = new NearestNUserNeighborhood(10,0,similarity, model);  
-\\选取最近邻居
-            /*第二个参数是阈值，代表邻居相似度的最小取值，这里设置为0，表示选取大于0的相似度，求出相似度的范围其实是[-1,1]之间的，也就是不填的话默认全选，mae求得为0.85+
-            这里为了缩小到正常得mae值，我们设置阈值为0，负值代表负相关，我们这里不选取。另外第一个参数天总用户数就行，超出了也没有关系，源码处理得是非常好的，
-            int numUsers = dataModel.getNumUsers();
-            this.n = n &gt; numUsers ? numUsers : n;也就是你超出了就自动选取数据集得用户个数
-            */
-            UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
-//基于用户的推荐算法接口，GenericUserBasedRecommender，除了这种还有其他的推荐算法接口，比如基于物品的，等等，建议大家去查看api
-//            UserBasedRecommender recommender = new GenericBooleanPrefUserBasedRecommender(model, neighborhood, similarity);
-
-            double MAE = 0;
-            int count = 0;
-            LongPrimitiveIterator userIds = model_test.getUserIDs();
-//创建迭代器，获取所有测试集里面的用户id
-            for (int i=0; i&lt;model_test.getNumUsers(); i++){
-                    long userId = userIds.nextLong();
-//由于是迭代器，使用nextlong()可以每次取一个数据
-//                    System.out.println(userId);
-                    PreferenceArray preferences = model_test.getPreferencesFromUser(userId);
-//相似用户
-//                    System.out.println(preferences);
-                    for (int j=0; j&lt;preferences.length(); j++){
-                        Preference preference = preferences.get(j);
-//获取相似用户所有信息
-//                        System.out.println(preference.getValue());
-//以下为计算Mae的算法，这里就不做介绍了，给出mae的概念，平均差值，就是预测值与真实值的平均差值的绝对值
-                        float predict = Float.NaN;
-                        try{
-                            predict = recommender.estimatePreference(preference.getUserID(), preference.getItemID());}
-                        catch (Exception e){
-                            System.out.println(&quot;*****************&quot;);
-                            System.out.println(preference.getUserID());
-                            System.out.println(preference.getItemID());
-                            System.out.println(&quot;*****************&quot;);
-                        }
-//                        float predict = Double.NaN;
-//                        double predict = recommender.estimatePreference(preference.getUserID(), preference.getItemID());
-                        if (!Double.isNaN(predict)){
-                            double temp = Math.abs(predict-preference.getValue());
-                            MAE += temp;
-                            count++;
-                            System.out.println(&quot;用户&quot;+preference.getUserID()+&quot;对电影&quot;+preference.getItemID()+&quot;的预测值为：&quot;+predict);
-                        }
-                    }
-
-            }
-            System.out.println(&quot;平均误差值MAE=&quot;+MAE/count);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }catch (TasteException e){
-            e.printStackTrace();
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println(&quot;程序运行时间为：&quot;+(float)(endTime-starTime)/1000+&quot;s&quot;);
-    }
-}</code></pre><p>对于相似度算法的选取，以及推荐算法的选取，还是看大家自己去探索，具体的大概步骤就是：给出数据集生成模型，使用相似度算法计算相似度，设置最近邻居，使用推荐算法，下面自己编写算法，得到自己想要的结果。</p>
+        <h2 id="不同系统下，查看Java和python的安装目录"><a href="#不同系统下，查看Java和python的安装目录" class="headerlink" title="不同系统下，查看Java和python的安装目录"></a>不同系统下，查看Java和python的安装目录</h2><h2 id="MAC系统下："><a href="#MAC系统下：" class="headerlink" title="MAC系统下："></a>MAC系统下：</h2><p>输入以下命令：</p>
+<pre><code>//查看python安装目录
+which python
+//查看java安装目录
+which java</code></pre><h2 id="windows系统下："><a href="#windows系统下：" class="headerlink" title="windows系统下："></a>windows系统下：</h2><p>输入以下命令：</p>
+<pre><code>//查看python安装目录
+where python
+//查看java安装目录
+java -verbose
+//最后两行就是jdk的安装路径</code></pre><h2 id="另外，python可以通过命令"><a href="#另外，python可以通过命令" class="headerlink" title="另外，python可以通过命令"></a>另外，python可以通过命令</h2><p>在终端命令下面进入到python环境</p>
+<pre><code>&gt;&gt;&gt;python
+&gt;&gt;&gt;import sys
+&gt;&gt;&gt;sys.path</code></pre><p>即可输出python的安装路径</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -761,12 +658,12 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;</code></pre><p>这�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>使用hadoop生态圈mahout做推荐系统</p>
+    <p><span class="copy-title">文章标题:</span>查看java和python安装目录</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 15:22:11</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-01, 16:01:14</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/使用hadoop生态圈mahout做推荐系统/" title="使用hadoop生态圈mahout做推荐系统">http://yoursite.com/2019/09/01/使用hadoop生态圈mahout做推荐系统/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-21, 16:35:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-21, 16:41:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/21/查看java和python安装目录/" title="查看java和python安装目录">http://yoursite.com/2019/09/21/查看java和python安装目录/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
