@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>jQuery显示隐藏动画效果 | blog</title>
-  <meta name="keywords" content=" 编程 , javascript ">
-  <meta name="description" content="jQuery显示隐藏动画效果 | blog">
+  <title>html中label标签的作用 | blog</title>
+  <meta name="keywords" content=" 编程 , html ">
+  <meta name="description" content="html中label标签的作用 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="博主为南京财经大学，软件工程专业研究生，研究方向为：推荐系统。博主联系方式：QQ：1990858822邮箱：1990858822@qq.com">
 <meta property="og:type" content="website">
@@ -583,9 +583,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-jQuery显示隐藏动画效果" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-html中label标签的作用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">jQuery显示隐藏动画效果</h1>
+        <h1 class="article-title">html中label标签的作用</h1>
     
     <div class="article-meta">
         
@@ -593,7 +593,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="前端">前端</a>
+                <a href="javascript:" data-rel="html">html</a>
             
         </span>
         
@@ -602,14 +602,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color1">javascript</a>
+            <a href="javascript:" class="color5">html</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-02 16:15:55'>2019-09-02 15:56</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-21 21:42:50'>2019-09-21 21:37</time>
         
     </div>
     <div class="article-meta">
@@ -631,7 +631,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery的显示和隐藏动画效果，直接上代码"><span class="toc-text">jQuery的显示和隐藏动画效果，直接上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加事件"><span class="toc-text">添加事件</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html中label标签的作用"><span class="toc-text">html中label标签的作用</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -646,47 +646,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="jQuery的显示和隐藏动画效果，直接上代码"><a href="#jQuery的显示和隐藏动画效果，直接上代码" class="headerlink" title="jQuery的显示和隐藏动画效果，直接上代码"></a>jQuery的显示和隐藏动画效果，直接上代码</h2><p>首先我们需要在head里面导入jquey</p>
-<pre><code>&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>加上现在body里面有一个div的标签，id为box，另外还有3个按钮，id分别为bt1,bt2,bt3，代码展示：</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;box&quot;&gt;&lt;div&gt;
-    &lt;button id=&quot;bt1&quot;&gt;隐藏&lt;/button&gt;
-    &lt;button id=&quot;bt2&quot;&gt;出现&lt;/button&gt;
-    &lt;button id=&quot;bt3&quot;&gt;自动转换&lt;/button&gt;
-&lt;/body&gt;</code></pre><p>当然了，我们还需要给div设置一下样式，不然页面是显示不出来的，样式直接在head里面写。</p>
-<pre><code>&lt;head&gt;
-    &lt;style tyle=&quot;text/css&quot;&gt;
-        *{
-            padding:0;
-            margin:0;
-        }
-        #box{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;</code></pre><p>现在我们的样式就写好了，可以打开页面看一下效果，当然了，点击按钮是没有任何反应的，因为我们还没有给按钮添加任何的事件。</p>
-<h2 id="添加事件"><a href="#添加事件" class="headerlink" title="添加事件"></a>添加事件</h2><p>在body里面写上如下代码：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    $div = $(&quot;#box&quot;)
-//获取到id为Box的元素
-    $(&quot;#bt1&quot;).click(function){
-        $div.hove(1000,function(){
-                alert(&#39;1秒之后隐藏&#39;)        
-        })
-    }
-    $(&quot;#bt2&quot;).click(function){
-        $div.show(1000,function(){
-                alert(&#39;1秒之后出现&#39;)        
-        })
-    }
-    $(&quot;#bt3&quot;).click(function){
-        $div.toggle(1000,function(){
-                alert(&#39;隐藏时点击出现，反之亦然&#39;)        
-        })
-    }
-&lt;/script&gt;</code></pre><p>以上代码中的hove函数是隐藏的意思，其中的参数第一个是消失的时间，就是在1秒之后会完全消失，show跟他相反，他是出现的意思，参数完全一样，后面还可以追加函数，这个函数会当我们前面的时间结束之后才执行。而toggle则融合了这两个方法，当元素是隐藏时，点击可以出现，当元素是出现的状态，点击会自动隐藏。</p>
+        <h2 id="html中label标签的作用"><a href="#html中label标签的作用" class="headerlink" title="html中label标签的作用"></a>html中label标签的作用</h2><p>比如我们创建一个label标签</p>
+<pre><code>&lt;label&gt;
+    姓名：
+    &lt;input type=&quot;text&quot; placeholder=&quot;请输入姓名&quot;&gt;
+&lt;/label&gt;</code></pre><p>label的作用就是当我们点击姓名的时候，鼠标会自动聚焦到input的表单当中去。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
@@ -700,12 +664,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>jQuery显示隐藏动画效果</p>
+    <p><span class="copy-title">文章标题:</span>html中label标签的作用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-02, 15:56:57</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-02, 16:15:55</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/jQuery显示隐藏动画效果/" title="jQuery显示隐藏动画效果">http://yoursite.com/2019/09/02/jQuery显示隐藏动画效果/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-21, 21:37:23</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-21, 21:42:50</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/21/html中label标签的作用/" title="html中label标签的作用">http://yoursite.com/2019/09/21/html中label标签的作用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
