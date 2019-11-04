@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>http请求过程 | blog</title>
-  <meta name="keywords" content=" 编程 , http ">
-  <meta name="description" content="http请求过程 | blog">
+  <title>安装tensorflow1.15.0版本 | blog</title>
+  <meta name="keywords" content=" 编程 , tensorflow ">
+  <meta name="description" content="安装tensorflow1.15.0版本 | blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="python代码设置提示音当我们每次运行一些时间比较长的代码的时候，就需要来提醒我们代码已经运行结束了，那么最后设置一个提示的声音。 import winsound time = 1000 hz = 440 winsound.Beep(hz, time) #其中time表示响铃的时间 #hz表示响铃的声音">
 <meta name="keywords" content="编程,python">
@@ -612,9 +612,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-http请求过程" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-安装tensorflow1-15-0版本" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">http请求过程</h1>
+        <h1 class="article-title">安装tensorflow1.15.0版本</h1>
     
     <div class="article-meta">
         
@@ -622,7 +622,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="网络">网络</a>
+                <a href="javascript:" data-rel="深度学习">深度学习</a>
             
         </span>
         
@@ -631,14 +631,14 @@
             
             <a href="javascript:" class="color3">编程</a>
             
-            <a href="javascript:" class="color5">http</a>
+            <a href="javascript:" class="color1">tensorflow</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-03 14:43:05'>2019-09-03 14:35</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-29 17:04:41'>2019-10-29 16:57</time>
         
     </div>
     <div class="article-meta">
@@ -660,7 +660,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"><span class="toc-text">说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http请求过程"><span class="toc-text">http请求过程</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装tensorflow2-0以下版本步骤"><span class="toc-text">安装tensorflow2.0以下版本步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一种方法：直接使用"><span class="toc-text">第一种方法：直接使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二种方法：使用清华大学镜像安装"><span class="toc-text">第二种方法：使用清华大学镜像安装</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -675,8 +675,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"><a href="#说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。" class="headerlink" title="说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。"></a>说一下这个也是为了小伙伴们能更好的了解ajax的工作原理。</h2><h2 id="http请求过程"><a href="#http请求过程" class="headerlink" title="http请求过程"></a>http请求过程</h2><p>当我们登录到一个网站的时候，我们可能会点击一些东西，然后触发一些响应事件，获取到一些想要的数据，那么是一个怎么样的过程了，首先，我们触发一个事件，然后会向服务器发送一个http的请求，当服务器接收到这个请求之后，会从数据库里面拿到符合条件的数据，拿到之后会返回给浏览器，这个时候浏览器会将返回的数据进行渲染，然后以html或者xml等等其他的形式展示到页面上面去。</p>
-
+        <h2 id="安装tensorflow2-0以下版本步骤"><a href="#安装tensorflow2-0以下版本步骤" class="headerlink" title="安装tensorflow2.0以下版本步骤"></a>安装tensorflow2.0以下版本步骤</h2><h2 id="第一种方法：直接使用"><a href="#第一种方法：直接使用" class="headerlink" title="第一种方法：直接使用"></a>第一种方法：直接使用</h2><pre><code>pip install tensorflow==版本号</code></pre><p>可以进行安装，但是这个包的大小是100M以上，安装每秒是20K不到的速度，要安装非常长的时间，因此这里主要提供的还是第二种方法。</p>
+<h2 id="第二种方法：使用清华大学镜像安装"><a href="#第二种方法：使用清华大学镜像安装" class="headerlink" title="第二种方法：使用清华大学镜像安装"></a>第二种方法：使用清华大学镜像安装</h2><p>第一步：百度搜索：pip 清华大学，点击第一个进去<br>第二步：将自己的电脑的pip更新到最新，可以使用命令：</p>
+<pre><code>python -m pip install --upgrade pip</code></pre><p>第三步：输入以下命令：</p>
+<pre><code>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+#执行完上面之后
+pip install tensorflow==版本号</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1990858822@qq.com </span>
     </div>
@@ -689,12 +693,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>http请求过程</p>
+    <p><span class="copy-title">文章标题:</span>安装tensorflow1.15.0版本</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="XIAOK Z">XIAOK Z</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 14:35:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-03, 14:43:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/http请求过程/" title="http请求过程">http://yoursite.com/2019/09/03/http请求过程/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-29, 16:57:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 17:04:41</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/安装tensorflow1-15-0版本/" title="安装tensorflow1.15.0版本">http://yoursite.com/2019/10/29/安装tensorflow1-15-0版本/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
